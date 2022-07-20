@@ -17,7 +17,6 @@ import {
 	Link,
 	Box,
 	Button,
-	ButtonGroup,
 	Input,
 	InputGroup,
 	InputLeftElement,
@@ -194,23 +193,14 @@ export default function Canales() {
 
 			{/* Column 2 */}
 			<Flex
-				w={["100%", "85%"]}
+				w={["100%", "100%", "60%", "60%", "55%"]}
 				p='3%'
 				flexDir='column'
 				overflow='auto'
 				minH='100vh'>
-				<Box
-					display='flex'
-					alignItems='center'
-					justifyContent='space-between'
-					width='86%'>
-					<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-						Canales
-					</Heading>
-					<ButtonGroup gap='4'>
-						<Button colorScheme='green'>Agregar</Button>
-					</ButtonGroup>
-				</Box>
+				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
+					Canales
+				</Heading>
 				<Text color='gray' fontSize='sm'>
 					Validaciones Solicitadas
 				</Text>
@@ -220,172 +210,162 @@ export default function Canales() {
 							<Thead>
 								<Tr color='gray'>
 									<Th>Canal</Th>
-									<Th>Alias</Th>
 									<Th>ID</Th>
 									<Th>Status</Th>
-									<Th>Acción</Th>
-									<Th>Llave</Th>
-									<Th>Operación</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
 								<Tr>
 									<Td>
 										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 1
 												</Heading>
-												{/* <Text
+												<Text
 													fontSize='sm'
 													color='gray'>
 													Timestamp
-												</Text> */}
+												</Text>
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Alias</Td>
 									<Td>1212ffsf</Td>
 									<Td>Aprobado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								<Tr>
 									<Td>
 										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 2
 												</Heading>
-												{/* <Text
+												<Text
 													fontSize='sm'
 													color='gray'>
 													timestamp
-												</Text> */}
+												</Text>
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Alias</Td>
 									<Td>5431223</Td>
 									<Td>Denegado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								<Tr>
 									<Td>
 										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 3
 												</Heading>
-												{/* <Text
+												<Text
 													fontSize='sm'
 													color='gray'>
 													timestamp
-												</Text> */}
+												</Text>
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Alias</Td>
 									<Td>54553qwqw</Td>
 									<Td>Denegado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								{display == "show" && (
 									<>
 										<Tr>
 											<Td>
 												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 4
 														</Heading>
-														{/* <Text
+														<Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text> */}
+														</Text>
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Alias</Td>
 											<Td>7675434jj</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 										<Tr>
 											<Td>
 												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 5
 														</Heading>
-														{/* <Text
+														<Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text> */}
+														</Text>
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Alias</Td>
 											<Td>2121k4k4k4</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 										<Tr>
 											<Td>
 												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 6
 														</Heading>
-														{/* <Text
+														<Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text> */}
+														</Text>
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Alias</Td>
 											<Td>1123123fdf</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 									</>
 								)}
@@ -413,15 +393,15 @@ export default function Canales() {
 						<Divider />
 					</Flex>
 				</Flex>
-				{/* <Heading fontWeight='normal' mb={4} letterSpacing='tight'>
+				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
 					Validadores
 				</Heading>
 				<Text color='gray' fontSize='sm'>
 					Validaciones Aprobadas
-				</Text> */}
+				</Text>
 				<Flex flexDir='column'>
 					<Flex overflow='auto'>
-						{/* <Table variant='unstyled' mt={4}>
+						<Table variant='unstyled' mt={4}>
 							<Thead>
 								<Tr color='gray'>
 									<Th>Canal</Th>
@@ -585,9 +565,9 @@ export default function Canales() {
 									</>
 								)}
 							</Tbody>
-						</Table> */}
+						</Table>
 					</Flex>
-					{/* <Flex align='center'>
+					<Flex align='center'>
 						<Divider />
 						<IconButton
 							icon={
@@ -606,7 +586,7 @@ export default function Canales() {
 							}}
 						/>
 						<Divider />
-					</Flex> */}
+					</Flex>
 				</Flex>
 			</Flex>
 
@@ -618,7 +598,7 @@ export default function Canales() {
 				flexDir='column'
 				overflow='auto'
 				minW={[null, null, "300px", "300px", "400px"]}> */}
-			{/* <Flex alignContent='center'>
+				{/* <Flex alignContent='center'>
 					<IconButton
 						icon={<FiBell />}
 						fontSize='sm'
@@ -726,7 +706,7 @@ export default function Canales() {
 						</AccordionPanel>
 					</AccordionItem>
 				</Accordion> */}
-			{/* {value == 1 && (
+				{/* {value == 1 && (
 					<Box
 						borderRadius='25px'
 						mt={4}
@@ -891,7 +871,7 @@ export default function Canales() {
 						</Flex>
 					</Box>
 				)} */}
-			{/* <Flex justifyContent='center' mt={2}>
+				{/* <Flex justifyContent='center' mt={2}>
 					<Button
 						bgColor={value == 1 ? "gray.600" : "gray.400"}
 						size='xs'

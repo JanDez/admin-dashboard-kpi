@@ -199,11 +199,7 @@ export default function Canales() {
 				flexDir='column'
 				overflow='auto'
 				minH='100vh'>
-				<Box
-					display='flex'
-					alignItems='center'
-					justifyContent='space-between'
-					width='86%'>
+				<Box flexDir='column' w='90%' alignItems='center'>
 					<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
 						Canales
 					</Heading>
@@ -223,9 +219,7 @@ export default function Canales() {
 									<Th>Alias</Th>
 									<Th>ID</Th>
 									<Th>Status</Th>
-									<Th>Acción</Th>
-									<Th>Llave</Th>
-									<Th>Operación</Th>
+									<Th></Th>
 								</Tr>
 							</Thead>
 							<Tbody>

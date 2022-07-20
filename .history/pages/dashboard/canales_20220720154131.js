@@ -203,7 +203,7 @@ export default function Canales() {
 					display='flex'
 					alignItems='center'
 					justifyContent='space-between'
-					width='86%'>
+					width='86.3%'>
 					<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
 						Canales
 					</Heading>
@@ -223,9 +223,7 @@ export default function Canales() {
 									<Th>Alias</Th>
 									<Th>ID</Th>
 									<Th>Status</Th>
-									<Th>Acción</Th>
-									<Th>Llave</Th>
-									<Th>Operación</Th>
+									<Th></Th>
 								</Tr>
 							</Thead>
 							<Tbody>

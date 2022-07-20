@@ -224,8 +224,6 @@ export default function Canales() {
 									<Th>ID</Th>
 									<Th>Status</Th>
 									<Th>Acción</Th>
-									<Th>Llave</Th>
-									<Th>Operación</Th>
 								</Tr>
 							</Thead>
 							<Tbody>

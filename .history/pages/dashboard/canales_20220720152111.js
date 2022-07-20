@@ -17,7 +17,6 @@ import {
 	Link,
 	Box,
 	Button,
-	ButtonGroup,
 	Input,
 	InputGroup,
 	InputLeftElement,
@@ -199,18 +198,16 @@ export default function Canales() {
 				flexDir='column'
 				overflow='auto'
 				minH='100vh'>
-				<Box
-					display='flex'
-					alignItems='center'
-					justifyContent='space-between'
-					width='86%'>
-					<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-						Canales
-					</Heading>
-					<ButtonGroup gap='4'>
-						<Button colorScheme='green'>Agregar</Button>
-					</ButtonGroup>
-				</Box>
+				<Table variant='unstyled mt={4}'>
+					<Thead>
+						<Tr color='gray'>
+							<Th>Canal</Th>
+							<Th>Alias</Th>
+							<Th>ID</Th>
+							<Th>Status</Th>
+						</Tr>
+					</Thead>
+				</Table>
 				<Text color='gray' fontSize='sm'>
 					Validaciones Solicitadas
 				</Text>
@@ -223,9 +220,6 @@ export default function Canales() {
 									<Th>Alias</Th>
 									<Th>ID</Th>
 									<Th>Status</Th>
-									<Th>Acción</Th>
-									<Th>Llave</Th>
-									<Th>Operación</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -249,11 +243,6 @@ export default function Canales() {
 									<Td>Alias</Td>
 									<Td>1212ffsf</Td>
 									<Td>Aprobado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								<Tr>
 									<Td>
@@ -275,11 +264,6 @@ export default function Canales() {
 									<Td>Alias</Td>
 									<Td>5431223</Td>
 									<Td>Denegado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								<Tr>
 									<Td>
@@ -301,11 +285,6 @@ export default function Canales() {
 									<Td>Alias</Td>
 									<Td>54553qwqw</Td>
 									<Td>Denegado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								{display == "show" && (
 									<>
@@ -329,11 +308,6 @@ export default function Canales() {
 											<Td>Alias</Td>
 											<Td>7675434jj</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 										<Tr>
 											<Td>
@@ -355,11 +329,6 @@ export default function Canales() {
 											<Td>Alias</Td>
 											<Td>2121k4k4k4</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 										<Tr>
 											<Td>
@@ -381,11 +350,6 @@ export default function Canales() {
 											<Td>Alias</Td>
 											<Td>1123123fdf</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 									</>
 								)}
