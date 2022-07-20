@@ -142,6 +142,7 @@ export default function Bitacora() {
 									<Text>Canales</Text>
 								</Link>
 							</Flex>
+							
 							<Flex
 								className='sidebar-items'
 								mr={[2, 6, 0, 0, 0]}>

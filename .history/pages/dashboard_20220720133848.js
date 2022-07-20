@@ -1,26 +1,26 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 import {
-	Flex,
-	Heading,
-	Avatar,
-	AvatarGroup,
-	Text,
-	Icon,
-	IconButton,
-	Table,
-	Thead,
-	Tbody,
-	Tr,
-	Th,
-	Td,
-	Divider,
-	Link,
-	Box,
-	Button,
-	Input,
-	InputGroup,
-	InputLeftElement,
-} from "@chakra-ui/react"
+    Flex,
+    Heading,
+    Avatar,
+    AvatarGroup,
+    Text,
+    Icon,
+    IconButton,
+    Table,
+    Thead,
+    Tbody,
+    Tr,
+    Th,
+    Td,
+    Divider,
+    Link,
+    Box,
+    Button,
+    Input,
+    InputGroup,
+    InputLeftElement
+} from '@chakra-ui/react'
 import {
 	FiHome,
 	FiCalendar,
@@ -33,12 +33,12 @@ import {
 	FiLayers,
 	FiUsers,
 } from "react-icons/fi"
-import MyChart from "./../../components/MyChart"
+import MyChart from '../components/MyChart'
 
-export default function Bitacora() {
-	const [display, changeDisplay] = useState("hide")
-	const [value, changeValue] = useState(1)
-	return (
+export default function Dashboard() {
+    const [display, changeDisplay] = useState('hide')
+    const [value, changeValue] = useState(1)
+    return (
 		<Flex
 			h={[null, null, "100vh"]}
 			maxW='2000px'
@@ -126,7 +126,8 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 										"flex",
-									]}>
+									]}
+									href='/dashboard/canales'>
 									<Icon as={FiLayers} fontSize='2xl' />
 								</Link>
 								<Link
@@ -142,6 +143,7 @@ export default function Bitacora() {
 									<Text>Canales</Text>
 								</Link>
 							</Flex>
+							
 							<Flex
 								className='sidebar-items'
 								mr={[2, 6, 0, 0, 0]}>
@@ -153,11 +155,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiBookOpen}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiBookOpen} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -167,15 +165,21 @@ export default function Bitacora() {
 										"none",
 										"flex",
 										"flex",
-									]}>
-									<Text className='active'>Bitacora</Text>
+									]}
+									href='/dashboard/bitacora'>
+									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-						<Avatar my={2} src='avatar-1.jpg' />
-						<Text textAlign='center'>Leonel Messi</Text>
+						<Link
+							_hover={{ textDecor: "none" }}
+							display={["flex", "flex", "none", "flex", "flex"]}
+							href='/dashboard/profile'>
+							<Icon as={FiUsers} fontSize='4xl' />
+						</Link>
+						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
 			</Flex>
@@ -190,7 +194,7 @@ export default function Bitacora() {
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
 					Bienvenido,{" "}
 					<Flex display='inline-flex' fontWeight='bold'>
-						Leo
+						Alan
 					</Flex>
 					<InputGroup
 						bgColor='#fff'

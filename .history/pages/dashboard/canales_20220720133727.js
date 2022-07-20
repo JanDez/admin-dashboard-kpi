@@ -35,7 +35,7 @@ import {
 } from "react-icons/fi"
 import MyChart from "./../../components/MyChart"
 
-export default function Bitacora() {
+export default function Canales() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
@@ -126,8 +126,13 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 										"flex",
-									]}>
-									<Icon as={FiLayers} fontSize='2xl' />
+									]}
+									href='/dashboard/canales'>
+									<Icon
+										as={FiLayers}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -139,7 +144,7 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard/canales'>
-									<Text>Canales</Text>
+									<Text className='active'>Canales</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -153,11 +158,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiBookOpen}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiKey} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -167,15 +168,47 @@ export default function Bitacora() {
 										"none",
 										"flex",
 										"flex",
+									]}
+									href='/dashboard/llaves'>
+									<Text>Llaves</Text>
+								</Link>
+							</Flex>
+							<Flex
+								className='sidebar-items'
+								mr={[2, 6, 0, 0, 0]}>
+								<Link
+									display={[
+										"none",
+										"none",
+										"flex",
+										"flex",
+										"flex",
 									]}>
-									<Text className='active'>Bitacora</Text>
+									<Icon as={FiBookOpen} fontSize='2xl' />
+								</Link>
+								<Link
+									_hover={{ textDecor: "none" }}
+									display={[
+										"flex",
+										"flex",
+										"none",
+										"flex",
+										"flex",
+									]}
+									href='/dashboard/bitacora'>
+									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-						<Avatar my={2} src='avatar-1.jpg' />
-						<Text textAlign='center'>Leonel Messi</Text>
+						<Link
+							_hover={{ textDecor: "none" }}
+							display={["flex", "flex", "none", "flex", "flex"]}
+							href='/dashboard/profile'>
+							<Icon as={FiUsers} fontSize='4xl' />
+						</Link>
+						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
 			</Flex>
@@ -188,30 +221,10 @@ export default function Bitacora() {
 				overflow='auto'
 				minH='100vh'>
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Bienvenido,{" "}
-					<Flex display='inline-flex' fontWeight='bold'>
-						Leo
-					</Flex>
-					<InputGroup
-						bgColor='#fff'
-						mb={4}
-						border='none'
-						borderColor='#fff'
-						borderRadius='10px'
-						mr={2}>
-						<InputLeftElement
-							pointerEvents='none'
-							children={<FiSearch color='gray' />}
-						/>
-						<Input
-							type='number'
-							placeholder='Search'
-							borderRadius='10px'
-						/>
-					</InputGroup>
+					Actividades de los Canales
 				</Heading>
 				<Text color='gray' fontSize='sm'>
-					Request
+					Validaciones
 				</Text>
 				<Text fontWeight='bold' fontSize='2xl'>
 					1450

@@ -23,19 +23,26 @@ import {
 } from "@chakra-ui/react"
 import {
 	FiHome,
-	FiCalendar,
 	FiChevronDown,
 	FiChevronUp,
 	FiPlus,
-	FiSearch,
 	FiBookOpen,
-	FiKey,
 	FiLayers,
 	FiUsers,
+	FiFolderPlus,
+	FiXOctagon,
+	FiCheckSquare,
+	FiSquare,
 } from "react-icons/fi"
-import MyChart from "./../../components/MyChart"
+import {
+	Accordion,
+	AccordionItem,
+	AccordionButton,
+	AccordionPanel,
+	AccordionIcon,
+} from "@chakra-ui/react"
 
-export default function Bitacora() {
+export default function Canales() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
@@ -98,11 +105,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiHome}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiHome} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -113,7 +116,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Text className='active'>Home</Text>
+									<Text>Home</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -126,8 +129,13 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 										"flex",
-									]}>
-									<Icon as={FiLayers} fontSize='2xl' />
+									]}
+									href='/dashboard/canales'>
+									<Icon
+										as={FiLayers}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -139,7 +147,7 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard/canales'>
-									<Text>Canales</Text>
+									<Text className='active'>Canales</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -153,11 +161,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiBookOpen}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiBookOpen} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -167,15 +171,21 @@ export default function Bitacora() {
 										"none",
 										"flex",
 										"flex",
-									]}>
-									<Text className='active'>Bitacora</Text>
+									]}
+									href='/dashboard/bitacora'>
+									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-						<Avatar my={2} src='avatar-1.jpg' />
-						<Text textAlign='center'>Leonel Messi</Text>
+						<Link
+							_hover={{ textDecor: "none" }}
+							display={["flex", "flex", "none", "flex", "flex"]}
+							href='/dashboard/profile'>
+							<Icon as={FiUsers} fontSize='4xl' />
+						</Link>
+						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
 			</Flex>
@@ -188,54 +198,18 @@ export default function Bitacora() {
 				overflow='auto'
 				minH='100vh'>
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Bienvenido,{" "}
-					<Flex display='inline-flex' fontWeight='bold'>
-						Leo
-					</Flex>
-					<InputGroup
-						bgColor='#fff'
-						mb={4}
-						border='none'
-						borderColor='#fff'
-						borderRadius='10px'
-						mr={2}>
-						<InputLeftElement
-							pointerEvents='none'
-							children={<FiSearch color='gray' />}
-						/>
-						<Input
-							type='number'
-							placeholder='Search'
-							borderRadius='10px'
-						/>
-					</InputGroup>
+					Canales
 				</Heading>
 				<Text color='gray' fontSize='sm'>
-					Request
+					Validaciones Solicitadas
 				</Text>
-				<Text fontWeight='bold' fontSize='2xl'>
-					1450
-				</Text>
-				<MyChart />
-				<Flex justifyContent='space-between' mt={8}>
-					<Flex align='flex-end'>
-						<Heading as='h2' size='lg' letterSpacing='tight'>
-							Validaciones
-						</Heading>
-						<Text fontSize='small' color='gray' ml={4}>
-							Fecha
-						</Text>
-					</Flex>
-					<IconButton icon={<FiCalendar />} />
-				</Flex>
 				<Flex flexDir='column'>
 					<Flex overflow='auto'>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
 								<Tr color='gray'>
 									<Th>Canal</Th>
-									<Th>Validador</Th>
-									<Th>Tipo de Validación</Th>
+									<Th>ID</Th>
 									<Th>Status</Th>
 								</Tr>
 							</Thead>
@@ -262,8 +236,7 @@ export default function Bitacora() {
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Validador 1</Td>
-									<Td>Multiple</Td>
+									<Td>1212ffsf</Td>
 									<Td>Aprobado</Td>
 								</Tr>
 								<Tr>
@@ -288,8 +261,7 @@ export default function Bitacora() {
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Velidador 2</Td>
-									<Td>Simple</Td>
+									<Td>5431223</Td>
 									<Td>Denegado</Td>
 								</Tr>
 								<Tr>
@@ -314,8 +286,7 @@ export default function Bitacora() {
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Validador 3</Td>
-									<Td>Simple</Td>
+									<Td>54553qwqw</Td>
 									<Td>Denegado</Td>
 								</Tr>
 								{display == "show" && (
@@ -342,8 +313,7 @@ export default function Bitacora() {
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Validador 4</Td>
-											<Td>Multiple</Td>
+											<Td>7675434jj</Td>
 											<Td>Aprobado</Td>
 										</Tr>
 										<Tr>
@@ -368,8 +338,7 @@ export default function Bitacora() {
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Validador 5</Td>
-											<Td>Multiple</Td>
+											<Td>2121k4k4k4</Td>
 											<Td>Aprobado</Td>
 										</Tr>
 										<Tr>
@@ -394,8 +363,202 @@ export default function Bitacora() {
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Validador 6</Td>
-											<Td>Simple</Td>
+											<Td>1123123fdf</Td>
+											<Td>Aprobado</Td>
+										</Tr>
+									</>
+								)}
+							</Tbody>
+						</Table>
+					</Flex>
+					<Flex align='center'>
+						<Divider />
+						<IconButton
+							icon={
+								display == "show" ? (
+									<FiChevronUp />
+								) : (
+									<FiChevronDown />
+								)
+							}
+							onClick={() => {
+								if (display == "show") {
+									changeDisplay("none")
+								} else {
+									changeDisplay("show")
+								}
+							}}
+						/>
+						<Divider />
+					</Flex>
+				</Flex>
+				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
+					Validadores
+				</Heading>
+				<Text color='gray' fontSize='sm'>
+					Validaciones Aprobadas
+				</Text>
+				<Flex flexDir='column'>
+					<Flex overflow='auto'>
+						<Table variant='unstyled' mt={4}>
+							<Thead>
+								<Tr color='gray'>
+									<Th>Canal</Th>
+									<Th>ID</Th>
+									<Th>Status</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Canal 1
+												</Heading>
+												<Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text>
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>1212342334efdf3rr</Td>
+									<Td>Aprobado</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Canal 2
+												</Heading>
+												<Text
+													fontSize='sm'
+													color='gray'>
+													timestamp
+												</Text>
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>23123wr544</Td>
+									<Td>Denegado</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Canal 3
+												</Heading>
+												<Text
+													fontSize='sm'
+													color='gray'>
+													timestamp
+												</Text>
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>1231434dfge66</Td>
+									<Td>Denegado</Td>
+								</Tr>
+								{display == "show" && (
+									<>
+										<Tr>
+											<Td>
+												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
+													<Flex flexDir='column'>
+														<Heading
+															size='sm'
+															letterSpacing='tight'>
+															Canal 4
+														</Heading>
+														<Text
+															fontSize='sm'
+															color='gray'>
+															timestamp
+														</Text>
+													</Flex>
+												</Flex>
+											</Td>
+											<Td>567645345ffdfsd</Td>
+											<Td>Aprobado</Td>
+										</Tr>
+										<Tr>
+											<Td>
+												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
+													<Flex flexDir='column'>
+														<Heading
+															size='sm'
+															letterSpacing='tight'>
+															Canal 5
+														</Heading>
+														<Text
+															fontSize='sm'
+															color='gray'>
+															timestamp
+														</Text>
+													</Flex>
+												</Flex>
+											</Td>
+											<Td>131432sdfsd</Td>
+											<Td>Aprobado</Td>
+										</Tr>
+										<Tr>
+											<Td>
+												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
+													<Flex flexDir='column'>
+														<Heading
+															size='sm'
+															letterSpacing='tight'>
+															Canal 6
+														</Heading>
+														<Text
+															fontSize='sm'
+															color='gray'>
+															timestamp
+														</Text>
+													</Flex>
+												</Flex>
+											</Td>
+											<Td>1234234dfd</Td>
 											<Td>Aprobado</Td>
 										</Tr>
 									</>
@@ -457,7 +620,91 @@ export default function Bitacora() {
 						2
 					</Flex> */}
 				</Flex>
-				<Heading letterSpacing='tight'>Actividad</Heading>
+				<Heading mb={8} letterSpacing='tight'>
+					Actividad Destacada
+				</Heading>
+				<Accordion mb={12} defaultIndex={[0]} allowMultiple>
+					<AccordionItem>
+						<h2>
+							<AccordionButton>
+								<Box flex='1' textAlign='left'>
+									Canales con Mayor Actividad
+								</Box>
+								<AccordionIcon />
+							</AccordionButton>
+						</h2>
+						<AccordionPanel pb={4}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</AccordionPanel>
+					</AccordionItem>
+
+					<AccordionItem>
+						<h2>
+							<AccordionButton>
+								<Box flex='1' textAlign='left'>
+									Validadores con Mayor Actividad
+								</Box>
+								<AccordionIcon />
+							</AccordionButton>
+						</h2>
+						<AccordionPanel pb={4}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</AccordionPanel>
+					</AccordionItem>
+				</Accordion>
+
+				<Heading mb={6} letterSpacing='tight'>
+					Resumen General de Actividades
+				</Heading>
+				<Accordion defaultIndex={[0]} allowMultiple>
+					<AccordionItem>
+						<h2>
+							<AccordionButton>
+								<Box flex='1' textAlign='left'>
+									Canales con Mayor Actividad
+								</Box>
+								<AccordionIcon />
+							</AccordionButton>
+						</h2>
+						<AccordionPanel pb={4}>
+							<Flex flexDir='column' my={4}>
+								<Flex justify='space-between' mb={2}>
+									<Icon as={FiFolderPlus} fontSize='2xl' />
+									<Text>Solicitudes</Text>
+									<Text fontWeight='bold'>1400</Text>
+								</Flex>
+								<Flex justify='space-between'>
+									<Icon as={FiCheckSquare} fontSize='2xl' />
+									<Text>Solicitudes Aprobadas</Text>
+									<Text fontWeight='bold'>3000</Text>
+								</Flex>
+								<Flex justify='space-between'>
+									<Icon as={FiXOctagon} fontSize='2xl' />
+									<Text>Solicitudes Denegadas</Text>
+									<Text fontWeight='bold'>3000</Text>
+								</Flex>
+								<Flex justify='space-between'>
+									<Icon as={FiSquare} fontSize='2xl' />
+									<Text>Solicitudes Simples</Text>
+									<Text fontWeight='bold'>3000</Text>
+								</Flex>
+								<Flex justify='space-between'>
+									<Icon as={FiGrid} fontSize='2xl' />
+									<Text>Solicitudes Multiples</Text>
+									<Text fontWeight='bold'>3000</Text>
+								</Flex>
+							</Flex>
+						</AccordionPanel>
+					</AccordionItem>
+				</Accordion>
 				{/* {value == 1 && (
 					<Box
 						borderRadius='25px'
@@ -623,7 +870,7 @@ export default function Bitacora() {
 						</Flex>
 					</Box>
 				)} */}
-				<Flex justifyContent='center' mt={2}>
+				{/* <Flex justifyContent='center' mt={2}>
 					<Button
 						bgColor={value == 1 ? "gray.600" : "gray.400"}
 						size='xs'
@@ -642,65 +889,7 @@ export default function Bitacora() {
 						mx={1}
 						onClick={() => changeValue(3)}
 					/>
-				</Flex>
-				<Flex flexDir='column' my={4}>
-					<Flex justify='space-between' mb={2}>
-						<Text>Solicitudes</Text>
-						<Text fontWeight='bold'>1400</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Aprobadas</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Denegadas</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Simples</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Multiples</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-				</Flex>
-				<Heading letterSpacing='tight' size='md' my={4}>
-					Canales Mas Activos
-				</Heading>
-				<Flex>
-					<AvatarGroup size='md' max={3}>
-						<Avatar src='avatar-2.jpg' />
-						<Avatar src='avatar-3.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-					</AvatarGroup>
-					<Avatar
-						icon={<FiPlus />}
-						ml={2}
-						color='#fff'
-						bgColor='gray.300'
-					/>
-				</Flex>
-				<Heading letterSpacing='tight' size='md' my={4}>
-					Validadores Mas Activos
-				</Heading>
-				<Flex>
-					<AvatarGroup size='md' max={3}>
-						<Avatar src='avatar-3.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-2.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-					</AvatarGroup>
-					<Avatar
-						icon={<FiPlus />}
-						ml={2}
-						color='#fff'
-						bgColor='gray.300'
-					/>
-				</Flex>
+				</Flex> */}
 			</Flex>
 		</Flex>
 	)

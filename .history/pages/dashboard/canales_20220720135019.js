@@ -23,19 +23,22 @@ import {
 } from "@chakra-ui/react"
 import {
 	FiHome,
-	FiCalendar,
 	FiChevronDown,
 	FiChevronUp,
 	FiPlus,
-	FiSearch,
 	FiBookOpen,
-	FiKey,
 	FiLayers,
 	FiUsers,
 } from "react-icons/fi"
-import MyChart from "./../../components/MyChart"
+import {
+	Accordion,
+	AccordionItem,
+	AccordionButton,
+	AccordionPanel,
+	AccordionIcon,
+} from "@chakra-ui/react"
 
-export default function Bitacora() {
+export default function Canales() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
@@ -126,8 +129,13 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 										"flex",
-									]}>
-									<Icon as={FiLayers} fontSize='2xl' />
+									]}
+									href='/dashboard/canales'>
+									<Icon
+										as={FiLayers}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -139,7 +147,7 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard/canales'>
-									<Text>Canales</Text>
+									<Text className='active'>Canales</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -153,11 +161,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiBookOpen}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiBookOpen} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -167,15 +171,21 @@ export default function Bitacora() {
 										"none",
 										"flex",
 										"flex",
-									]}>
-									<Text className='active'>Bitacora</Text>
+									]}
+									href='/dashboard/bitacora'>
+									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-						<Avatar my={2} src='avatar-1.jpg' />
-						<Text textAlign='center'>Leonel Messi</Text>
+						<Link
+							_hover={{ textDecor: "none" }}
+							display={["flex", "flex", "none", "flex", "flex"]}
+							href='/dashboard/profile'>
+							<Icon as={FiUsers} fontSize='4xl' />
+						</Link>
+						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
 			</Flex>
@@ -188,46 +198,8 @@ export default function Bitacora() {
 				overflow='auto'
 				minH='100vh'>
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Bienvenido,{" "}
-					<Flex display='inline-flex' fontWeight='bold'>
-						Leo
-					</Flex>
-					<InputGroup
-						bgColor='#fff'
-						mb={4}
-						border='none'
-						borderColor='#fff'
-						borderRadius='10px'
-						mr={2}>
-						<InputLeftElement
-							pointerEvents='none'
-							children={<FiSearch color='gray' />}
-						/>
-						<Input
-							type='number'
-							placeholder='Search'
-							borderRadius='10px'
-						/>
-					</InputGroup>
+					Actividades de los Canales
 				</Heading>
-				<Text color='gray' fontSize='sm'>
-					Request
-				</Text>
-				<Text fontWeight='bold' fontSize='2xl'>
-					1450
-				</Text>
-				<MyChart />
-				<Flex justifyContent='space-between' mt={8}>
-					<Flex align='flex-end'>
-						<Heading as='h2' size='lg' letterSpacing='tight'>
-							Validaciones
-						</Heading>
-						<Text fontSize='small' color='gray' ml={4}>
-							Fecha
-						</Text>
-					</Flex>
-					<IconButton icon={<FiCalendar />} />
-				</Flex>
 				<Flex flexDir='column'>
 					<Flex overflow='auto'>
 						<Table variant='unstyled' mt={4}>
@@ -457,7 +429,85 @@ export default function Bitacora() {
 						2
 					</Flex> */}
 				</Flex>
-				<Heading letterSpacing='tight'>Actividad</Heading>
+				<Heading letterSpacing='tight'>Actividad Destacada</Heading>
+				<Accordion defaultIndex={[0]} allowMultiple>
+					<AccordionItem>
+						<h2>
+							<AccordionButton>
+								<Box flex='1' textAlign='left'>
+									Canales con Mayor Actividad
+								</Box>
+								<AccordionIcon />
+							</AccordionButton>
+						</h2>
+						<AccordionPanel pb={4}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</AccordionPanel>
+					</AccordionItem>
+
+					<AccordionItem>
+						<h2>
+							<AccordionButton>
+								<Box flex='1' textAlign='center'>
+									Validadores con Mayor Actividad
+								</Box>
+								<AccordionIcon />
+							</AccordionButton>
+						</h2>
+						<AccordionPanel pb={4}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</AccordionPanel>
+					</AccordionItem>
+				</Accordion>
+
+				<Heading letterSpacing='tight'>
+					Resumen General de Actividades
+				</Heading>
+				<Accordion defaultIndex={[0]} allowMultiple>
+					<AccordionItem>
+						<h2>
+							<AccordionButton>
+								<Box flex='1' textAlign='left'>
+									Canales con Mayor Actividad
+								</Box>
+								<AccordionIcon />
+							</AccordionButton>
+						</h2>
+						<AccordionPanel pb={4}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</AccordionPanel>
+					</AccordionItem>
+
+					<AccordionItem>
+						<h2>
+							<AccordionButton>
+								<Box flex='1' textAlign='left'>
+									Validadores con Mayor Actividad
+								</Box>
+								<AccordionIcon />
+							</AccordionButton>
+						</h2>
+						<AccordionPanel pb={4}>
+							Lorem ipsum dolor sit amet, consectetur adipiscing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat.
+						</AccordionPanel>
+					</AccordionItem>
+				</Accordion>
 				{/* {value == 1 && (
 					<Box
 						borderRadius='25px'
@@ -623,7 +673,7 @@ export default function Bitacora() {
 						</Flex>
 					</Box>
 				)} */}
-				<Flex justifyContent='center' mt={2}>
+				{/* <Flex justifyContent='center' mt={2}>
 					<Button
 						bgColor={value == 1 ? "gray.600" : "gray.400"}
 						size='xs'
@@ -642,7 +692,7 @@ export default function Bitacora() {
 						mx={1}
 						onClick={() => changeValue(3)}
 					/>
-				</Flex>
+				</Flex> */}
 				<Flex flexDir='column' my={4}>
 					<Flex justify='space-between' mb={2}>
 						<Text>Solicitudes</Text>

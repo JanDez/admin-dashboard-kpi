@@ -153,6 +153,31 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
+									<Icon as={FiKey} fontSize='2xl' />
+								</Link>
+								<Link
+									_hover={{ textDecor: "none" }}
+									display={[
+										"flex",
+										"flex",
+										"none",
+										"flex",
+										"flex",
+									]}>
+									<Text>Llaves</Text>
+								</Link>
+							</Flex>
+							<Flex
+								className='sidebar-items'
+								mr={[2, 6, 0, 0, 0]}>
+								<Link
+									display={[
+										"none",
+										"none",
+										"flex",
+										"flex",
+										"flex",
+									]}>
 									<Icon
 										as={FiBookOpen}
 										fontSize='2xl'
@@ -168,7 +193,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Text className='active'>Bitacora</Text>
+									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
