@@ -31,11 +31,10 @@ import {
 	FiBookOpen,
 	FiKey,
 	FiLayers,
-	FiUsers,
+	FiUserCheck,
 } from "react-icons/fi"
-import MyChart from "./../../components/MyChart"
 
-export default function Bitacora() {
+export default function Ll() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
@@ -127,7 +126,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiLayers} fontSize='2xl' />
+									<Icon as={FiPieChart} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -153,7 +152,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiUserCheck} fontSize='2xl' />
+									<Icon as={FiDollarSign} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -163,9 +162,8 @@ export default function Bitacora() {
 										"none",
 										"flex",
 										"flex",
-									]}
-									href='/dashboard/canales'>
-									<Text>Validadores</Text>
+									]}>
+									<Text>Item 1</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -179,7 +177,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiKey} fontSize='2xl' />
+									<Icon as={FiBox} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -190,32 +188,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Text>Llaves</Text>
-								</Link>
-							</Flex>
-							<Flex
-								className='sidebar-items'
-								mr={[2, 6, 0, 0, 0]}>
-								<Link
-									display={[
-										"none",
-										"none",
-										"flex",
-										"flex",
-										"flex",
-									]}>
-									<Icon as={FiBookOpen} fontSize='2xl' />
-								</Link>
-								<Link
-									_hover={{ textDecor: "none" }}
-									display={[
-										"flex",
-										"flex",
-										"none",
-										"flex",
-										"flex",
-									]}>
-									<Text>Bitacora</Text>
+									<Text>Item 2</Text>
 								</Link>
 							</Flex>
 						</Flex>
@@ -235,39 +208,13 @@ export default function Bitacora() {
 				overflow='auto'
 				minH='100vh'>
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Bienvenido,{" "}
-					<Flex display='inline-flex' fontWeight='bold'>
-						Leo
-					</Flex>
-					<InputGroup
-						bgColor='#fff'
-						mb={4}
-						border='none'
-						borderColor='#fff'
-						borderRadius='10px'
-						mr={2}>
-						<InputLeftElement
-							pointerEvents='none'
-							children={<FiSearch color='gray' />}
-						/>
-						<Input
-							type='number'
-							placeholder='Search'
-							borderRadius='10px'
-						/>
-					</InputGroup>
+					Lista de Llaves{" "}
+					<Flex display='inline-flex' fontWeight='bold'></Flex>
 				</Heading>
-				<Text color='gray' fontSize='sm'>
-					Request
-				</Text>
-				<Text fontWeight='bold' fontSize='2xl'>
-					1450
-				</Text>
-				<MyChart />
 				<Flex justifyContent='space-between' mt={8}>
 					<Flex align='flex-end'>
 						<Heading as='h2' size='lg' letterSpacing='tight'>
-							Validaciones
+							Canales Mas Activos
 						</Heading>
 						<Text fontSize='small' color='gray' ml={4}>
 							Fecha

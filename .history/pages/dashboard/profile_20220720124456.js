@@ -31,11 +31,11 @@ import {
 	FiBookOpen,
 	FiKey,
 	FiLayers,
-	FiUsers,
+	FiUserCheck,
 } from "react-icons/fi"
 import MyChart from "./../../components/MyChart"
 
-export default function Bitacora() {
+export default function PRofile() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
@@ -126,7 +126,8 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 										"flex",
-									]}>
+									]}
+									href='/dashboard/canales'>
 									<Icon as={FiLayers} fontSize='2xl' />
 								</Link>
 								<Link
@@ -152,7 +153,8 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 										"flex",
-									]}>
+									]}
+									href='/dashboard/validador'>
 									<Icon as={FiUserCheck} fontSize='2xl' />
 								</Link>
 								<Link
@@ -164,7 +166,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/canales'>
+									href='/dashboard/validador'>
 									<Text>Validadores</Text>
 								</Link>
 							</Flex>
@@ -189,7 +191,8 @@ export default function Bitacora() {
 										"none",
 										"flex",
 										"flex",
-									]}>
+									]}
+									href='/dashboard/llaves'>
 									<Text>Llaves</Text>
 								</Link>
 							</Flex>
@@ -214,7 +217,8 @@ export default function Bitacora() {
 										"none",
 										"flex",
 										"flex",
-									]}>
+									]}
+									href='/dashboard/bitacora'>
 									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
