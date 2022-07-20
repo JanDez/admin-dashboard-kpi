@@ -33,8 +33,7 @@ import {
 	FiLayers,
 	FiUsers,
 } from "react-icons/fi"
-import MyChart from "./../../components/MyChart"
-
+git push -u origin 'main'
 export default function Dashboard() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)

@@ -33,7 +33,7 @@ import {
 	FiLayers,
 	FiUsers,
 } from "react-icons/fi"
-import MyChart from "./../../components/MyChart"
+import MyChart from "../components/MyChart"
 
 export default function Dashboard() {
 	const [display, changeDisplay] = useState("hide")
