@@ -145,6 +145,11 @@ export default function Bitacora() {
 							<Flex
 								className='sidebar-items'
 								mr={[2, 6, 0, 0, 0]}>
+								
+							</Flex>
+							<Flex
+								className='sidebar-items'
+								mr={[2, 6, 0, 0, 0]}>
 								<Link
 									display={[
 										"none",
