@@ -125,9 +125,8 @@ export default function Llaves() {
 										"flex",
 										"flex",
 										"flex",
-									]}
-									href='/dashboard/canales'>
-									<Icon as={FiLayers} fontSize='2xl' />
+									]}>
+									<Icon as={FiPieChart} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -153,7 +152,7 @@ export default function Llaves() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiKey} fontSize='2xl' />
+									<Icon as={FiDollarSign} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -163,9 +162,8 @@ export default function Llaves() {
 										"none",
 										"flex",
 										"flex",
-									]}
-									href='/dashboard/llaves'>
-									<Text>Llaves</Text>
+									]}>
+									<Text>Item 1</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -179,7 +177,7 @@ export default function Llaves() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiBookOpen} fontSize='2xl' />
+									<Icon as={FiBox} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -189,21 +187,15 @@ export default function Llaves() {
 										"none",
 										"flex",
 										"flex",
-									]}
-									href='/dashboard/bitacora'>
-									<Text>Bitacora</Text>
+									]}>
+									<Text>Item 2</Text>
 								</Link>
 							</Flex>
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-						<Link
-							_hover={{ textDecor: "none" }}
-							display={["flex", "flex", "none", "flex", "flex"]}
-							href='/dashboard/profile'>
-							<Icon as={FiUsers} fontSize='4xl' />
-						</Link>
-						<Text textAlign='center'>Alan Turing</Text>
+						<Avatar my={2} src='avatar-1.jpg' />
+						<Text textAlign='center'>Leonel Messi</Text>
 					</Flex>
 				</Flex>
 			</Flex>

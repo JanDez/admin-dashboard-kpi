@@ -206,6 +206,12 @@ export default function Llaves() {
 						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
+					</Flex>
+					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
+						<Avatar my={2} src='avatar-1.jpg' />
+						<Text textAlign='center'>Leonel Messi</Text>
+					</Flex>
+				</Flex>
 			</Flex>
 
 			{/* Column 2 */}

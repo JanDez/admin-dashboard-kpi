@@ -206,6 +206,7 @@ export default function Llaves() {
 						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
+					
 			</Flex>
 
 			{/* Column 2 */}
