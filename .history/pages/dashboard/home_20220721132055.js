@@ -224,19 +224,149 @@ export default function Home() {
 						Validaciones
 					</Text>
 					<MyChart />
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Top Canales
+					</Text>
 					<Flex>
+						<Table variant='unstyled' mt={4}>
+							<Thead>
+								<Tr color='gray'>
+									<Th>Canales</Th>
+									<Th>Cantidad de Validaciones</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+								</Tr>
+							</Tbody>
+						</Table>
 						<Text color='gray' fontSize='2xl' w='500px' mt={8}>
-							Top Canales
-						</Text>
-						<Text
-							color='gray'
-							fontSize='2xl'
-							w='500px'
-							mt={8}
-							ml={16}>
 							Top Validadores
 						</Text>
+						<Table variant='unstyled' mt={4}>
+							<Thead>
+								<Tr color='gray'>
+									<Th>Canales</Th>
+									<Th>Cantidad de Validaciones</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+								</Tr>
+							</Tbody>
+						</Table>
 					</Flex>
+
 					<Flex>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
@@ -305,76 +435,7 @@ export default function Home() {
 								</Tr>
 							</Tbody>
 						</Table>
-
-						<Table variant='unstyled' mt={4}>
-							<Thead>
-								<Tr color='gray'>
-									<Th>Canales</Th>
-									<Th>Cantidad de Validaciones</Th>
-								</Tr>
-							</Thead>
-							<Tbody>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-							</Tbody>
-						</Table>
 					</Flex>
-
 					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
 						Top Resultados
 					</Text>

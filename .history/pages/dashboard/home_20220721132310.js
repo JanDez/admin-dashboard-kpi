@@ -224,19 +224,7 @@ export default function Home() {
 						Validaciones
 					</Text>
 					<MyChart />
-					<Flex>
-						<Text color='gray' fontSize='2xl' w='500px' mt={8}>
-							Top Canales
-						</Text>
-						<Text
-							color='gray'
-							fontSize='2xl'
-							w='500px'
-							mt={8}
-							ml={16}>
-							Top Validadores
-						</Text>
-					</Flex>
+
 					<Flex>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
@@ -375,6 +363,7 @@ export default function Home() {
 						</Table>
 					</Flex>
 
+					
 					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
 						Top Resultados
 					</Text>

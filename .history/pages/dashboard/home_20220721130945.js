@@ -200,7 +200,7 @@ export default function Home() {
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-						<Icon as={FiUser} fontSize='4xl' />
+                        <Icon as={FiUser} fontSize='4xl' />
 						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
@@ -224,168 +224,96 @@ export default function Home() {
 						Validaciones
 					</Text>
 					<MyChart />
-					<Flex>
-						<Text color='gray' fontSize='2xl' w='500px' mt={8}>
-							Top Canales
-						</Text>
-						<Text
-							color='gray'
-							fontSize='2xl'
-							w='500px'
-							mt={8}
-							ml={16}>
-							Top Validadores
-						</Text>
-					</Flex>
-					<Flex>
-						<Table variant='unstyled' mt={4}>
-							<Thead>
-								<Tr color='gray'>
-									<Th>Canales</Th>
-									<Th>Cantidad de Validaciones</Th>
-								</Tr>
-							</Thead>
-							<Tbody>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-							</Tbody>
-						</Table>
-
-						<Table variant='unstyled' mt={4}>
-							<Thead>
-								<Tr color='gray'>
-									<Th>Canales</Th>
-									<Th>Cantidad de Validaciones</Th>
-								</Tr>
-							</Thead>
-							<Tbody>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>Info</Td>
-								</Tr>
-							</Tbody>
-						</Table>
-					</Flex>
-
 					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
-						Top Resultados
+						Canales
 					</Text>
 					<Flex>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
 								<Tr color='gray'>
-									<Th>Canal</Th>
+									<Th>Canales</Th>
+									<Th>Cantidad de Validaciones</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+								</Tr>
+							</Tbody>
+						</Table>
+					</Flex>
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Llaves
+					</Text>
+					<Flex>
+						<Table variant='unstyled' mt={4}>
+							<Thead>
+								<Tr color='gray'>
+									<Th>Fecha</Th>
+									<Th>ID de Petición</Th>
 									<Th>Operación</Th>
+									<Th>Canal</Th>
+									<Th>Canal Validador</Th>
 									<Th>Resultado</Th>
-									<Th>Cantidad</Th>
+									<Th>Resultado Validador</Th>
+									<Th>Acción</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -409,6 +337,14 @@ export default function Home() {
 									<Td>Info</Td>
 									<Td>Info</Td>
 									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
 								</Tr>
 								<Tr>
 									<Td>
@@ -430,6 +366,14 @@ export default function Home() {
 									<Td>Info</Td>
 									<Td>Info</Td>
 									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
 								</Tr>
 								<Tr>
 									<Td>
@@ -451,6 +395,122 @@ export default function Home() {
 									<Td>Info</Td>
 									<Td>Info</Td>
 									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+							</Tbody>
+						</Table>
+					</Flex>
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Operaciones
+					</Text>
+					<Flex>
+						<Table variant='unstyled' mt={4}>
+							<Thead>
+								<Tr color='gray'>
+									<Th>Fecha</Th>
+									<Th>ID de Petición</Th>
+									<Th>Operación</Th>
+									<Th>Canal</Th>
+									<Th>Canal Validador</Th>
+									<Th>Resultado</Th>
+									<Th>Resultado Validador</Th>
+									<Th>Acción</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
 								</Tr>
 							</Tbody>
 						</Table>

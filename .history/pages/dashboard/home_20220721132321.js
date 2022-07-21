@@ -228,12 +228,7 @@ export default function Home() {
 						<Text color='gray' fontSize='2xl' w='500px' mt={8}>
 							Top Canales
 						</Text>
-						<Text
-							color='gray'
-							fontSize='2xl'
-							w='500px'
-							mt={8}
-							ml={16}>
+						<Text color='gray' fontSize='2xl' w='500px' mt={8}>
 							Top Validadores
 						</Text>
 					</Flex>
