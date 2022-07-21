@@ -111,7 +111,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/home'>
+									href='/dashboard&home'>
 									<Text>Home</Text>
 								</Link>
 							</Flex>
