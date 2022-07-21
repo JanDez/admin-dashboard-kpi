@@ -33,7 +33,6 @@ import {
 	FiKey,
 	FiLayers,
 	FiUsers,
-	FiUser,
 } from "react-icons/fi"
 
 import { VscCalendar } from "react-icons/vsc"
@@ -100,11 +99,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiHome}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiHome} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -115,8 +110,8 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard'>
-									<Text className='active'>Home</Text>
+									href='/dashboard/home'>
+									<Text>Home</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -157,7 +152,11 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiBookOpen} fontSize='2xl' />
+									<Icon
+										as={FiBookOpen}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -169,39 +168,18 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard/bitacora'>
-									<Text>Bitacora</Text>
-								</Link>
-							</Flex>
-							<Flex
-								className='sidebar-items'
-								mr={[2, 6, 0, 0, 0]}>
-								<Link
-									display={[
-										"none",
-										"none",
-										"flex",
-										"flex",
-										"flex",
-									]}>
-									<Icon as={FiUsers} fontSize='2xl' />
-								</Link>
-								<Link
-									_hover={{ textDecor: "none" }}
-									display={[
-										"flex",
-										"flex",
-										"none",
-										"flex",
-										"flex",
-									]}
-									href='/dashboard/users'>
-									<Text>Usuarios</Text>
+									<Text className='active'>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-						<Icon as={FiUser} fontSize='4xl' />
+						<Link
+							_hover={{ textDecor: "none" }}
+							display={["flex", "flex", "none", "flex", "flex"]}
+							href='/dashboard/profile'>
+							<Icon as={FiUsers} fontSize='4xl' />
+						</Link>
 						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>

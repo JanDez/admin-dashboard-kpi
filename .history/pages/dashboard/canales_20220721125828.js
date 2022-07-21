@@ -31,7 +31,6 @@ import {
 	FiBookOpen,
 	FiLayers,
 	FiUsers,
-	FiUser,
 	FiFolderPlus,
 	FiXOctagon,
 	FiCheckSquare,
@@ -199,7 +198,7 @@ export default function Canales() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/users'>
+									href='/dashboard/bitacora'>
 									<Text>Usuarios</Text>
 								</Link>
 							</Flex>

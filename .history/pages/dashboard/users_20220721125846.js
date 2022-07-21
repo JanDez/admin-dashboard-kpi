@@ -17,32 +17,25 @@ import {
 	Link,
 	Box,
 	Button,
-	ButtonGroup,
 	Input,
 	InputGroup,
 	InputLeftElement,
-	
 } from "@chakra-ui/react"
 import {
 	FiHome,
+	FiCalendar,
 	FiChevronDown,
 	FiChevronUp,
 	FiPlus,
+	FiSearch,
 	FiBookOpen,
+	FiKey,
 	FiLayers,
-	FiUsers,
-	FiUser,
-	FiFolderPlus,
-	FiXOctagon,
-	FiCheckSquare,
-	FiSquare,
-	FiGrid,
+	FiUserCheck,
 } from "react-icons/fi"
+import MyChart from "../../components/MyChart"
 
-import KeysModal from '../../components/KeysModal'
-import MyOperations from '../../components/MyOperations'
-
-export default function Canales() {
+export default function Profile() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
@@ -199,7 +192,7 @@ export default function Canales() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/users'>
+									href='/dashboard/bitacora'>
 									<Text>Usuarios</Text>
 								</Link>
 							</Flex>
@@ -214,204 +207,221 @@ export default function Canales() {
 
 			{/* Column 2 */}
 			<Flex
-				w={["100%", "85%"]}
+				w={["100%", "100%", "60%", "60%", "55%"]}
 				p='3%'
 				flexDir='column'
 				overflow='auto'
 				minH='100vh'>
-				<Box
-					display='flex'
-					alignItems='center'
-					justifyContent='space-between'
-					width='86%'>
-					<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-						Canales
-					</Heading>
-					<ButtonGroup gap='4'>
-						<Button colorScheme='green'>Agregar</Button>
-					</ButtonGroup>
-				</Box>
+				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
+					Bienvenido,{" "}
+					<Flex display='inline-flex' fontWeight='bold'>
+						Leo
+					</Flex>
+					<InputGroup
+						bgColor='#fff'
+						mb={4}
+						border='none'
+						borderColor='#fff'
+						borderRadius='10px'
+						mr={2}>
+						<InputLeftElement
+							pointerEvents='none'
+							children={<FiSearch color='gray' />}
+						/>
+						<Input
+							type='number'
+							placeholder='Search'
+							borderRadius='10px'
+						/>
+					</InputGroup>
+				</Heading>
 				<Text color='gray' fontSize='sm'>
-					Validaciones Solicitadas
+					Request
 				</Text>
+				<Text fontWeight='bold' fontSize='2xl'>
+					1450
+				</Text>
+				<MyChart />
+				<Flex justifyContent='space-between' mt={8}>
+					<Flex align='flex-end'>
+						<Heading as='h2' size='lg' letterSpacing='tight'>
+							Validaciones
+						</Heading>
+						<Text fontSize='small' color='gray' ml={4}>
+							Fecha
+						</Text>
+					</Flex>
+					<IconButton icon={<FiCalendar />} />
+				</Flex>
 				<Flex flexDir='column'>
 					<Flex overflow='auto'>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
 								<Tr color='gray'>
 									<Th>Canal</Th>
-									<Th>Alias</Th>
-									<Th>ID</Th>
+									<Th>Validador</Th>
+									<Th>Tipo de Validación</Th>
 									<Th>Status</Th>
-									<Th>Acción</Th>
-									<Th>Llave</Th>
-									<Th>Operación</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
 								<Tr>
 									<Td>
 										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 1
 												</Heading>
-												{/* <Text
+												<Text
 													fontSize='sm'
 													color='gray'>
 													Timestamp
-												</Text> */}
+												</Text>
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Alias</Td>
-									<Td>1212ffsf</Td>
+									<Td>Validador 1</Td>
+									<Td>Multiple</Td>
 									<Td>Aprobado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
-									<Td>
-										<KeysModal />
-									</Td>
-									<Td>
-										<MyOperations />
-									</Td>
 								</Tr>
 								<Tr>
 									<Td>
 										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 2
 												</Heading>
-												{/* <Text
+												<Text
 													fontSize='sm'
 													color='gray'>
 													timestamp
-												</Text> */}
+												</Text>
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Alias</Td>
-									<Td>5431223</Td>
+									<Td>Velidador 2</Td>
+									<Td>Simple</Td>
 									<Td>Denegado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								<Tr>
 									<Td>
 										<Flex align='center'>
+											<Avatar
+												size='sm'
+												mr={2}
+												src='amazon.jpeg'
+											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 3
 												</Heading>
-												{/* <Text
+												<Text
 													fontSize='sm'
 													color='gray'>
 													timestamp
-												</Text> */}
+												</Text>
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Alias</Td>
-									<Td>54553qwqw</Td>
+									<Td>Validador 3</Td>
+									<Td>Simple</Td>
 									<Td>Denegado</Td>
-									<Td>
-										<Button colorScheme='yellow'>
-											Editar
-										</Button>
-									</Td>
 								</Tr>
 								{display == "show" && (
 									<>
 										<Tr>
 											<Td>
 												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 4
 														</Heading>
-														{/* <Text
+														<Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text> */}
+														</Text>
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Alias</Td>
-											<Td>7675434jj</Td>
+											<Td>Validador 4</Td>
+											<Td>Multiple</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 										<Tr>
 											<Td>
 												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 5
 														</Heading>
-														{/* <Text
+														<Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text> */}
+														</Text>
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Alias</Td>
-											<Td>2121k4k4k4</Td>
+											<Td>Validador 5</Td>
+											<Td>Multiple</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 										<Tr>
 											<Td>
 												<Flex align='center'>
+													<Avatar
+														size='sm'
+														mr={2}
+														src='amazon.jpeg'
+													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 6
 														</Heading>
-														{/* <Text
+														<Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text> */}
+														</Text>
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Alias</Td>
-											<Td>1123123fdf</Td>
+											<Td>Validador 6</Td>
+											<Td>Simple</Td>
 											<Td>Aprobado</Td>
-											<Td>
-												<Button colorScheme='yellow'>
-													Editar
-												</Button>
-											</Td>
 										</Tr>
 									</>
 								)}
@@ -439,213 +449,18 @@ export default function Canales() {
 						<Divider />
 					</Flex>
 				</Flex>
-				{/* <Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Validadores
-				</Heading>
-				<Text color='gray' fontSize='sm'>
-					Validaciones Aprobadas
-				</Text> */}
-				<Flex flexDir='column'>
-					<Flex overflow='auto'>
-						{/* <Table variant='unstyled' mt={4}>
-							<Thead>
-								<Tr color='gray'>
-									<Th>Canal</Th>
-									<Th>ID</Th>
-									<Th>Status</Th>
-								</Tr>
-							</Thead>
-							<Tbody>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Avatar
-												size='sm'
-												mr={2}
-												src='amazon.jpeg'
-											/>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Canal 1
-												</Heading>
-												<Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text>
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>1212342334efdf3rr</Td>
-									<Td>Aprobado</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Avatar
-												size='sm'
-												mr={2}
-												src='amazon.jpeg'
-											/>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Canal 2
-												</Heading>
-												<Text
-													fontSize='sm'
-													color='gray'>
-													timestamp
-												</Text>
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>23123wr544</Td>
-									<Td>Denegado</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Avatar
-												size='sm'
-												mr={2}
-												src='amazon.jpeg'
-											/>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Canal 3
-												</Heading>
-												<Text
-													fontSize='sm'
-													color='gray'>
-													timestamp
-												</Text>
-											</Flex>
-										</Flex>
-									</Td>
-									<Td>1231434dfge66</Td>
-									<Td>Denegado</Td>
-								</Tr>
-								{display == "show" && (
-									<>
-										<Tr>
-											<Td>
-												<Flex align='center'>
-													<Avatar
-														size='sm'
-														mr={2}
-														src='amazon.jpeg'
-													/>
-													<Flex flexDir='column'>
-														<Heading
-															size='sm'
-															letterSpacing='tight'>
-															Canal 4
-														</Heading>
-														<Text
-															fontSize='sm'
-															color='gray'>
-															timestamp
-														</Text>
-													</Flex>
-												</Flex>
-											</Td>
-											<Td>567645345ffdfsd</Td>
-											<Td>Aprobado</Td>
-										</Tr>
-										<Tr>
-											<Td>
-												<Flex align='center'>
-													<Avatar
-														size='sm'
-														mr={2}
-														src='amazon.jpeg'
-													/>
-													<Flex flexDir='column'>
-														<Heading
-															size='sm'
-															letterSpacing='tight'>
-															Canal 5
-														</Heading>
-														<Text
-															fontSize='sm'
-															color='gray'>
-															timestamp
-														</Text>
-													</Flex>
-												</Flex>
-											</Td>
-											<Td>131432sdfsd</Td>
-											<Td>Aprobado</Td>
-										</Tr>
-										<Tr>
-											<Td>
-												<Flex align='center'>
-													<Avatar
-														size='sm'
-														mr={2}
-														src='amazon.jpeg'
-													/>
-													<Flex flexDir='column'>
-														<Heading
-															size='sm'
-															letterSpacing='tight'>
-															Canal 6
-														</Heading>
-														<Text
-															fontSize='sm'
-															color='gray'>
-															timestamp
-														</Text>
-													</Flex>
-												</Flex>
-											</Td>
-											<Td>1234234dfd</Td>
-											<Td>Aprobado</Td>
-										</Tr>
-									</>
-								)}
-							</Tbody>
-						</Table> */}
-					</Flex>
-					{/* <Flex align='center'>
-						<Divider />
-						<IconButton
-							icon={
-								display == "show" ? (
-									<FiChevronUp />
-								) : (
-									<FiChevronDown />
-								)
-							}
-							onClick={() => {
-								if (display == "show") {
-									changeDisplay("none")
-								} else {
-									changeDisplay("show")
-								}
-							}}
-						/>
-						<Divider />
-					</Flex> */}
-				</Flex>
 			</Flex>
 
 			{/* Column 3 */}
-			{/* <Flex
+			<Flex
 				w={["100%", "100%", "30%"]}
-				bgColor='none'
+				bgColor='#F5F5F5'
 				p='3%'
 				flexDir='column'
 				overflow='auto'
-				minW={[null, null, "300px", "300px", "400px"]}> */}
-			{/* <Flex alignContent='center'>
-					<IconButton
+				minW={[null, null, "300px", "300px", "400px"]}>
+				<Flex alignContent='center'>
+					{/* <IconButton
 						icon={<FiBell />}
 						fontSize='sm'
 						bgColor='#fff'
@@ -665,94 +480,10 @@ export default function Canales() {
 						zIndex='100'
 						fontSize='xs'>
 						2
-					</Flex>
+					</Flex> */}
 				</Flex>
-				<Heading mb={8} letterSpacing='tight'>
-					Actividad Destacada
-				</Heading>
-				<Accordion mb={12} defaultIndex={[0]} allowMultiple>
-					<AccordionItem>
-						<h2>
-							<AccordionButton>
-								<Box flex='1' textAlign='left'>
-									Canales con Mayor Actividad
-								</Box>
-								<AccordionIcon />
-							</AccordionButton>
-						</h2>
-						<AccordionPanel pb={4}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-
-					<AccordionItem>
-						<h2>
-							<AccordionButton>
-								<Box flex='1' textAlign='left'>
-									Validadores con Mayor Actividad
-								</Box>
-								<AccordionIcon />
-							</AccordionButton>
-						</h2>
-						<AccordionPanel pb={4}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing
-							elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis
-							nostrud exercitation ullamco laboris nisi ut aliquip
-							ex ea commodo consequat.
-						</AccordionPanel>
-					</AccordionItem>
-				</Accordion>
-
-				<Heading mb={6} letterSpacing='tight'>
-					Resumen General de Actividades
-				</Heading>
-				<Accordion defaultIndex={[0]} allowMultiple>
-					<AccordionItem>
-						<h2>
-							<AccordionButton>
-								<Box flex='1' textAlign='left'>
-									Canales con Mayor Actividad
-								</Box>
-								<AccordionIcon />
-							</AccordionButton>
-						</h2>
-						<AccordionPanel pb={4}>
-							<Flex flexDir='column' my={4}>
-								<Flex justify='space-between' mb={2}>
-									<Icon as={FiFolderPlus} fontSize='2xl' />
-									<Text>Solicitudes</Text>
-									<Text fontWeight='bold'>1400</Text>
-								</Flex>
-								<Flex justify='space-between'>
-									<Icon as={FiCheckSquare} fontSize='2xl' />
-									<Text>Solicitudes Aprobadas</Text>
-									<Text fontWeight='bold'>3000</Text>
-								</Flex>
-								<Flex justify='space-between'>
-									<Icon as={FiXOctagon} fontSize='2xl' />
-									<Text>Solicitudes Denegadas</Text>
-									<Text fontWeight='bold'>3000</Text>
-								</Flex>
-								<Flex justify='space-between'>
-									<Icon as={FiSquare} fontSize='2xl' />
-									<Text>Solicitudes Simples</Text>
-									<Text fontWeight='bold'>3000</Text>
-								</Flex>
-								<Flex justify='space-between'>
-									<Icon as={FiGrid} fontSize='2xl' />
-									<Text>Solicitudes Multiples</Text>
-									<Text fontWeight='bold'>3000</Text>
-								</Flex>
-							</Flex>
-						</AccordionPanel>
-					</AccordionItem>
-				</Accordion> */}
-			{/* {value == 1 && (
+				<Heading letterSpacing='tight'>Actividad</Heading>
+				{/* {value == 1 && (
 					<Box
 						borderRadius='25px'
 						mt={4}
@@ -917,7 +648,7 @@ export default function Canales() {
 						</Flex>
 					</Box>
 				)} */}
-			{/* <Flex justifyContent='center' mt={2}>
+				<Flex justifyContent='center' mt={2}>
 					<Button
 						bgColor={value == 1 ? "gray.600" : "gray.400"}
 						size='xs'
@@ -936,8 +667,66 @@ export default function Canales() {
 						mx={1}
 						onClick={() => changeValue(3)}
 					/>
-				</Flex> */}
-			{/* </Flex> */}
+				</Flex>
+				<Flex flexDir='column' my={4}>
+					<Flex justify='space-between' mb={2}>
+						<Text>Solicitudes</Text>
+						<Text fontWeight='bold'>1400</Text>
+					</Flex>
+					<Flex justify='space-between'>
+						<Text>Solicitudes Aprobadas</Text>
+						<Text fontWeight='bold'>3000</Text>
+					</Flex>
+					<Flex justify='space-between'>
+						<Text>Solicitudes Denegadas</Text>
+						<Text fontWeight='bold'>3000</Text>
+					</Flex>
+					<Flex justify='space-between'>
+						<Text>Solicitudes Simples</Text>
+						<Text fontWeight='bold'>3000</Text>
+					</Flex>
+					<Flex justify='space-between'>
+						<Text>Solicitudes Multiples</Text>
+						<Text fontWeight='bold'>3000</Text>
+					</Flex>
+				</Flex>
+				<Heading letterSpacing='tight' size='md' my={4}>
+					Canales Mas Activos
+				</Heading>
+				<Flex>
+					<AvatarGroup size='md' max={3}>
+						<Avatar src='avatar-2.jpg' />
+						<Avatar src='avatar-3.jpg' />
+						<Avatar src='avatar-4.jpg' />
+						<Avatar src='avatar-4.jpg' />
+						<Avatar src='avatar-4.jpg' />
+					</AvatarGroup>
+					<Avatar
+						icon={<FiPlus />}
+						ml={2}
+						color='#fff'
+						bgColor='gray.300'
+					/>
+				</Flex>
+				<Heading letterSpacing='tight' size='md' my={4}>
+					Validadores Mas Activos
+				</Heading>
+				<Flex>
+					<AvatarGroup size='md' max={3}>
+						<Avatar src='avatar-3.jpg' />
+						<Avatar src='avatar-4.jpg' />
+						<Avatar src='avatar-2.jpg' />
+						<Avatar src='avatar-4.jpg' />
+						<Avatar src='avatar-4.jpg' />
+					</AvatarGroup>
+					<Avatar
+						icon={<FiPlus />}
+						ml={2}
+						color='#fff'
+						bgColor='gray.300'
+					/>
+				</Flex>
+			</Flex>
 		</Flex>
 	)
 }
