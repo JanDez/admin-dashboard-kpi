@@ -9,21 +9,19 @@ import {
 	useDisclosure,
 	Button,
 	Text,
-	Table, 
+	Table,
 	Thead,
 	Tbody,
-	Tr, 
+	Tr,
 	Th,
 	Td,
 	Flex,
 	Box,
 	Center,
-
 } from "@chakra-ui/react"
 
 import * as React from "react"
 export default function KeysModal() {
-
 	const OverlayTwo = () => (
 		<ModalOverlay
 			bg='none'
@@ -34,7 +32,7 @@ export default function KeysModal() {
 	)
 
 	const { isOpen, onOpen, onClose } = useDisclosure()
-  	const [overlay, setOverlay] = React.useState(<OverlayTwo />)
+	const [overlay, setOverlay] = React.useState(<OverlayTwo />)
 
 	return (
 		<>
@@ -44,7 +42,7 @@ export default function KeysModal() {
 					setOverlay(<OverlayTwo />)
 					onOpen()
 				}}>
-				Llaves
+				Mostrar Llave
 			</Button>
 			<Modal isCentelinkedin isOpen={isOpen} onClose={onClose}>
 				<ModalContent
@@ -55,34 +53,27 @@ export default function KeysModal() {
 						"linear(to-t, blue.200, teal.500)",
 						"linear(to-b, orange.100, purple.300)",
 					]}>
-					<ModalHeader>Llaves del Canal 1</ModalHeader>
+					<ModalHeader>Operaciones del Canal 1</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
 								<Tr color='black'>
-									<Th>Llave Pública</Th>
-									<Th>Llave Privada</Th>
-									<Th>Activo Desde:</Th>
-									<Th>Valida Hasta</Th>
+									<Th>Operaciones</Th>
+									<Th>Estado</Th>
 									<Th>Acciones</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
 								<Tr>
-									<Td>Nombre del Archivo</Td>
-									<Td>Nombre del Archivo </Td>
-									<Td>18-5-2022</Td>
-									<Td>18-8-2022</Td>
+									<Td>0001</Td>
+									<Td>Activo </Td>
 									<Td>
 										<Button m={1} colorScheme='yellow'>
 											Modificar
 										</Button>
-										<Button m={1} colorScheme='linkedin'>
-											Descargar Público
-										</Button>
-										<Button m={1} colorScheme='linkedin'>
-											Descargar Privada
+										<Button m={1} colorScheme='red'>
+											Eliminar
 										</Button>
 									</Td>
 								</Tr>

@@ -256,7 +256,7 @@ export default function Canales() {
 										<KeysModal />
 									</Td>
 									<Td>
-										<MyOperations />
+										<My />
 									</Td>
 								</Tr>
 								<Tr>

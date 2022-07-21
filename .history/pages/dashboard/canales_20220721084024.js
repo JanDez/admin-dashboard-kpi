@@ -41,6 +41,7 @@ import {
 import KeysModal from '../../components/KeysModal'
 import MyOperations from '../../components/MyOperations'
 
+
 export default function Canales() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
@@ -254,9 +255,6 @@ export default function Canales() {
 									</Td>
 									<Td>
 										<KeysModal />
-									</Td>
-									<Td>
-										<MyOperations />
 									</Td>
 								</Tr>
 								<Tr>

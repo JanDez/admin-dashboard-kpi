@@ -44,7 +44,7 @@ export default function KeysModal() {
 					setOverlay(<OverlayTwo />)
 					onOpen()
 				}}>
-				Llaves
+				 Llave
 			</Button>
 			<Modal isCentelinkedin isOpen={isOpen} onClose={onClose}>
 				<ModalContent

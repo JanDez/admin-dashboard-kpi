@@ -9,21 +9,19 @@ import {
 	useDisclosure,
 	Button,
 	Text,
-	Table, 
+	Table,
 	Thead,
 	Tbody,
-	Tr, 
+	Tr,
 	Th,
 	Td,
 	Flex,
 	Box,
 	Center,
-
 } from "@chakra-ui/react"
 
 import * as React from "react"
 export default function KeysModal() {
-
 	const OverlayTwo = () => (
 		<ModalOverlay
 			bg='none'
@@ -34,7 +32,7 @@ export default function KeysModal() {
 	)
 
 	const { isOpen, onOpen, onClose } = useDisclosure()
-  	const [overlay, setOverlay] = React.useState(<OverlayTwo />)
+	const [overlay, setOverlay] = React.useState(<OverlayTwo />)
 
 	return (
 		<>
@@ -44,7 +42,7 @@ export default function KeysModal() {
 					setOverlay(<OverlayTwo />)
 					onOpen()
 				}}>
-				Llaves
+				Mostrar Llave
 			</Button>
 			<Modal isCentelinkedin isOpen={isOpen} onClose={onClose}>
 				<ModalContent
