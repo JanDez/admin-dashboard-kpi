@@ -17,8 +17,8 @@ import {
 	Link,
 	Box,
 	Button,
-    Input,
-    Select,
+	Input,
+	Select,
 	InputGroup,
 	InputLeftElement,
 } from "@chakra-ui/react"
@@ -110,8 +110,8 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/home'>
-									<Text>Home</Text>
+									href='/dashboard'>
+									<Text className='active'>Home</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -155,7 +155,7 @@ export default function Bitacora() {
 									<Icon
 										as={FiBookOpen}
 										fontSize='2xl'
-										className='active-icon'
+										
 									/>
 								</Link>
 								<Link
@@ -168,7 +168,7 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard/bitacora'>
-									<Text className='active'>Bitacora</Text>
+									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>

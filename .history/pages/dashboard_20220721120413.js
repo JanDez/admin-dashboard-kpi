@@ -46,7 +46,7 @@ export default function Dashboard() {
 			overflow='hidden'>
 			{/* Column 1 */}
 			<Flex
-				w={["100%", "100%", "10%", "15%", "15%"]}
+				w={[ "185%", "15%"]}
 				flexDir='column'
 				alignItems='center'
 				backgroundColor='#020202'
@@ -426,98 +426,6 @@ export default function Dashboard() {
 						/>
 						<Divider />
 					</Flex>
-				</Flex>
-			</Flex>
-
-			{/* Column 3 */}
-			<Flex
-				w={["100%", "100%", "30%"]}
-				bgColor='#F5F5F5'
-				p='3%'
-				flexDir='column'
-				overflow='auto'
-				minW={[null, null, "300px", "300px", "400px"]}>
-				
-				<Heading letterSpacing='tight'>Actividad</Heading>
-				<Flex justifyContent='center' mt={2}>
-					<Button
-						bgColor={value == 1 ? "gray.600" : "gray.400"}
-						size='xs'
-                        mx={1}
-                        value={"value"}
-						onClick={() => changeValue(1)
-                        }
-					/>
-					<Button
-						bgColor={value == 2 ? "gray.600" : "gray.400"}
-						size='xs'
-						mx={1}
-						onClick={() => changeValue(2)}
-					/>
-					<Button
-						bgColor={value == 3 ? "gray.600" : "gray.400"}
-						size='xs'
-						mx={1}
-						onClick={() => changeValue(3)}
-					/>
-				</Flex>
-				<Flex flexDir='column' my={4}>
-					<Flex justify='space-between' mb={2}>
-						<Text>Solicitudes</Text>
-						<Text fontWeight='bold'>1400</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Aprobadas</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Denegadas</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Simples</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Multiples</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-				</Flex>
-				<Heading letterSpacing='tight' size='md' my={4}>
-					Canales Mas Activos
-				</Heading>
-				<Flex>
-					<AvatarGroup size='md' max={3}>
-						<Avatar src='avatar-2.jpg' />
-						<Avatar src='avatar-3.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-					</AvatarGroup>
-					<Avatar
-						icon={<FiPlus />}
-						ml={2}
-						color='#fff'
-						bgColor='gray.300'
-					/>
-				</Flex>
-				<Heading letterSpacing='tight' size='md' my={4}>
-					Validadores Mas Activos
-				</Heading>
-				<Flex>
-					<AvatarGroup size='md' max={3}>
-						<Avatar src='avatar-3.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-2.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-					</AvatarGroup>
-					<Avatar
-						icon={<FiPlus />}
-						ml={2}
-						color='#fff'
-						bgColor='gray.300'
-					/>
 				</Flex>
 			</Flex>
 		</Flex>

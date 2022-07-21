@@ -17,8 +17,8 @@ import {
 	Link,
 	Box,
 	Button,
-    Input,
-    Select,
+	Input,
+	Select,
 	InputGroup,
 	InputLeftElement,
 } from "@chakra-ui/react"
@@ -110,7 +110,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/home'>
+									href='/dashboard'>
 									<Text>Home</Text>
 								</Link>
 							</Flex>

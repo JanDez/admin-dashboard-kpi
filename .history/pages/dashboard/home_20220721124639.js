@@ -17,8 +17,8 @@ import {
 	Link,
 	Box,
 	Button,
-    Input,
-    Select,
+	Input,
+	Select,
 	InputGroup,
 	InputLeftElement,
 } from "@chakra-ui/react"
@@ -32,11 +32,12 @@ import {
 	FiBookOpen,
 	FiKey,
 	FiLayers,
-	FiUsers,
+    FiUsers,
+    
 } from "react-icons/fi"
 
-import { VscCalendar } from "react-icons/vsc"
-export default function Bitacora() {
+import MyChart  from "../../components/MyChart"
+export default function Home() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
@@ -99,7 +100,11 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiHome} fontSize='2xl' />
+									<Icon
+										as={FiHome}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -110,8 +115,8 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/home'>
-									<Text>Home</Text>
+									href='/dashboard'>
+									<Text className='active'>Home</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -152,11 +157,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiBookOpen}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiBookOpen} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -168,7 +169,33 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard/bitacora'>
-									<Text className='active'>Bitacora</Text>
+									<Text>Bitacora</Text>
+								</Link>
+							</Flex>
+							<Flex
+								className='sidebar-items'
+								mr={[2, 6, 0, 0, 0]}>
+								<Link
+									display={[
+										"none",
+										"none",
+										"flex",
+										"flex",
+										"flex",
+									]}>
+									<Icon as={FiBookOpen} fontSize='2xl' />
+								</Link>
+								<Link
+									_hover={{ textDecor: "none" }}
+									display={[
+										"flex",
+										"flex",
+										"none",
+										"flex",
+										"flex",
+									]}
+									href='/dashboard/bitacora'>
+									<Text>Usuarios</Text>
 								</Link>
 							</Flex>
 						</Flex>
@@ -177,7 +204,7 @@ export default function Bitacora() {
 						<Link
 							_hover={{ textDecor: "none" }}
 							display={["flex", "flex", "none", "flex", "flex"]}
-							href='/dashboard/profile'>
+							href='/dashboard/users'>
 							<Icon as={FiUsers} fontSize='4xl' />
 						</Link>
 						<Text textAlign='center'>Alan Turing</Text>
@@ -193,76 +220,234 @@ export default function Bitacora() {
 				overflow='auto'
 				minH='100vh'>
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Bitacora
+					Bienvenido, Alan
 				</Heading>
+				<Text color='gray' fontSize='2xl' w='500px'>
+					Estadisticas de Uso
+				</Text>
 				<Flex flexDir='column'>
-					<Text color='gray' fontSize='2xl' w='500px'>
-						Tipo de Consulta
+					<Text color='gray' fontSize='sm' w='500px'>
+						Validaciones
 					</Text>
-					<Flex justifyContent='left' mt={2} textAlign='center'>
-						<Select
-							variant='filled'
-							placeholder='Tipo de Consulta'
-							w={"500px"}
-							m={2}>
-							<option value='option1'>Canal</option>
-							<option value='option2'>Canal Validador</option>
-							<option value='option3'>ID Petición</option>
-							<option value='option3'>Operación</option>
-						</Select>
-
-						<InputGroup
-							bgColor='#ECF1F7'
-							mb={4}
-							border='none'
-							borderColor='#ECF1F8'
-							borderRadius='10px'
-							m={2}>
-							<InputLeftElement
-								pointerEvents='none'
-								children={<FiSearch color='gray' />}
-							/>
-							<Input
-								type='text'
-								placeholder='Buscar'
-								borderRadius='10px'
-							/>
-						</InputGroup>
-					</Flex>
-					<Flex
-						justifyContent='space-evenly'
-						mt={2}
-						textAlign='center'>
-						<Text color='gray' fontSize='sm' w='255px'>
-							Desde
-						</Text>
-						<Text color='gray' fontSize='sm' w='255px'>
-							Hasta
-						</Text>
-					</Flex>
-					<Flex overflow='auto' justifyContent='space-evenly'>
-						<Box display='block'>
-							<Input
-								placeHolder='Selecccione Fecha de Inicio'
-								size='md'
-								backgroundColor='#ffffff'
-								type='datetime-local'
-							/>
-						</Box>
-						<Box display='block'>
-							<Input
-								placeHolder='Seleccione Fecha de Fin'
-								size='md'
-								backgroundColor='#ffffff'
-								type='datetime-local'
-							/>
-						</Box>
-					</Flex>
-					<Button colorScheme='green' w={"80px"}>
-						Buscar
-					</Button>
+					<MyChart />
 					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
-						Resultado de Consulta
+						Canales
+					</Text>
+					<Flex>
+						<Table variant='unstyled' mt={4}>
+							<Thead>
+								<Tr color='gray'>
+									<Th>Fecha</Th>
+									<Th>ID de Petición</Th>
+									<Th>Operación</Th>
+									<Th>Canal</Th>
+									<Th>Canal Validador</Th>
+									<Th>Resultado</Th>
+									<Th>Resultado Validador</Th>
+									<Th>Acción</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+							</Tbody>
+						</Table>
+					</Flex>
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Llaves
+					</Text>
+					<Flex>
+						<Table variant='unstyled' mt={4}>
+							<Thead>
+								<Tr color='gray'>
+									<Th>Fecha</Th>
+									<Th>ID de Petición</Th>
+									<Th>Operación</Th>
+									<Th>Canal</Th>
+									<Th>Canal Validador</Th>
+									<Th>Resultado</Th>
+									<Th>Resultado Validador</Th>
+									<Th>Acción</Th>
+								</Tr>
+							</Thead>
+							<Tbody>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+								<Tr>
+									<Td>
+										<Flex align='center'>
+											<Flex flexDir='column'>
+												<Heading
+													size='sm'
+													letterSpacing='tight'>
+													Info
+												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
+											</Flex>
+										</Flex>
+									</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>Info</Td>
+									<Td>
+										<Button colorScheme='blue'>
+											Detalles
+										</Button>
+									</Td>
+								</Tr>
+							</Tbody>
+						</Table>
+					</Flex>
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Operaciones
 					</Text>
 					<Flex>
 						<Table variant='unstyled' mt={4}>

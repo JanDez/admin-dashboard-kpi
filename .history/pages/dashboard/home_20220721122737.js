@@ -17,8 +17,8 @@ import {
 	Link,
 	Box,
 	Button,
-    Input,
-    Select,
+	Input,
+	Select,
 	InputGroup,
 	InputLeftElement,
 } from "@chakra-ui/react"
@@ -35,7 +35,7 @@ import {
 	FiUsers,
 } from "react-icons/fi"
 
-import { VscCalendar } from "react-icons/vsc"
+import { MyChart } from "../../components/MyChart"
 export default function Bitacora() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
@@ -99,7 +99,11 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiHome} fontSize='2xl' />
+									<Icon
+										as={FiHome}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -110,8 +114,8 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/home'>
-									<Text>Home</Text>
+									href='/dashboard'>
+									<Text className='active'>Home</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -152,11 +156,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiBookOpen}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiBookOpen} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -168,7 +168,7 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard/bitacora'>
-									<Text className='active'>Bitacora</Text>
+									<Text>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
@@ -193,11 +193,9 @@ export default function Bitacora() {
 				overflow='auto'
 				minH='100vh'>
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Bitacora
+					Bienvenido, Alan
 				</Heading>
 				<Flex flexDir='column'>
-					<Text color='gray' fontSize='2xl' w='500px'>
-						Tipo de Consulta
 					</Text>
 					<Flex justifyContent='left' mt={2} textAlign='center'>
 						<Select
