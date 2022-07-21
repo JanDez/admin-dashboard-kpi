@@ -35,6 +35,7 @@ import {
 	FiUsers,
 	FiUser,
 } from "react-icons/fi"
+import { IconName } from "react-icons/bi"
 import MyChart  from "../../components/MyChart"
 export default function Home() {
 	const [display, changeDisplay] = useState("hide")

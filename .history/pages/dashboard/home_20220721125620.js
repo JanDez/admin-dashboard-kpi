@@ -35,6 +35,8 @@ import {
 	FiUsers,
 	FiUser,
 } from "react-icons/fi"
+import { IconName } from "react-icons/bi"
+
 import MyChart  from "../../components/MyChart"
 export default function Home() {
 	const [display, changeDisplay] = useState("hide")
@@ -200,7 +202,7 @@ export default function Home() {
 						</Flex>
 					</Flex>
 					<Flex flexDir='column' alignItems='center' mb={10} mt={5}>
-                        <Icon as={FiUser} fontSize='4xl' />
+						<Icon as={FiUBiUserCircleser} fontSize='4xl' />
 						<Text textAlign='center'>Alan Turing</Text>
 					</Flex>
 				</Flex>
