@@ -437,17 +437,29 @@ export default function Dashboard() {
 				flexDir='column'
 				overflow='auto'
 				minW={[null, null, "300px", "300px", "400px"]}>
-				
 				<Heading letterSpacing='tight'>Actividad</Heading>
 				<Flex justifyContent='center' mt={2}>
 					<Button
 						bgColor={value == 1 ? "gray.600" : "gray.400"}
 						size='xs'
-                        mx={1}
-                        value={"value"}
-						onClick={() => changeValue(1)
-                        }
-					/>
+						mx={1}
+                        onClick={() => changeValue(1)}>
+                        Canales
+                    </Button>
+					<Button
+						bgColor={value == 2 ? "gray.600" : "gray.400"}
+						size='xs'
+						mx={1}
+                        onClick={() => changeValue(1)}>
+                        Canales
+                    </Button>
+					<Button
+						bgColor={value == 1 ? "gray.600" : "gray.400"}
+						size='xs'
+						mx={1}
+                        onClick={() => changeValue(1)}>
+                        Canales
+                    </Button>
 					<Button
 						bgColor={value == 2 ? "gray.600" : "gray.400"}
 						size='xs'

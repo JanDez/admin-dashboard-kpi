@@ -17,10 +17,15 @@ import {
 	Link,
 	Box,
 	Button,
-    Input,
-    Select,
+	Input,
+	Select,
 	InputGroup,
 	InputLeftElement,
+	Accordion,
+	AccordionItem,
+	AccordionButton,
+	AccordionPanel,
+	AccordionIcon,
 } from "@chakra-ui/react"
 import {
 	FiHome,
@@ -203,32 +208,16 @@ export default function Bitacora() {
 						<Select
 							variant='filled'
 							placeholder='Tipo de Consulta'
-							w={"500px"}
-							m={2}>
+							w={"500px"}>
 							<option value='option1'>Canal</option>
 							<option value='option2'>Canal Validador</option>
 							<option value='option3'>ID Petición</option>
 							<option value='option3'>Operación</option>
 						</Select>
-
-						<InputGroup
-							bgColor='#ECF1F7'
-							mb={4}
-							border='none'
-							borderColor='#ECF1F8'
-							borderRadius='10px'
-							m={2}>
-							<InputLeftElement
-								pointerEvents='none'
-								children={<FiSearch color='gray' />}
-							/>
-							<Input
-								type='text'
-								placeholder='Buscar'
-								borderRadius='10px'
-							/>
-						</InputGroup>
 					</Flex>
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Filtrar Consulta por Fecha
+					</Text>
 					<Flex
 						justifyContent='space-evenly'
 						mt={2}
@@ -258,116 +247,100 @@ export default function Bitacora() {
 							/>
 						</Box>
 					</Flex>
-					<Button colorScheme='green' w={"80px"}>
-						Buscar
-					</Button>
-					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
-						Resultado de Consulta
-					</Text>
 					<Flex>
-						<Table variant='unstyled' mt={4}>
-							<Thead>
-								<Tr color='gray'>
-									<Th>Fecha</Th>
-									<Th>ID de Petición</Th>
-									<Th>Operación</Th>
-									<Th>Canal</Th>
-									<Th>Canal Validador</Th>
-									<Th>Resultado</Th>
-									<Th>Resultado Validador</Th>
-									<Th>Acción</Th>
-								</Tr>
-							</Thead>
-							<Tbody>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
+						<Accordion mb={12} defaultIndex={[0]} allowMultiple>
+							<AccordionItem>
+								<h2>
+									<AccordionButton>
+										<Box flex='1' textAlign='left'>
+											Canales con Mayor Actividad
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel pb={4}>
+									Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+									Ut enim ad minim veniam, quis nostrud
+									exercitation ullamco laboris nisi ut aliquip
+									ex ea commodo consequat.
+								</AccordionPanel>
+							</AccordionItem>
+
+							<AccordionItem>
+								<h2>
+									<AccordionButton>
+										<Box flex='1' textAlign='left'>
+											Validadores con Mayor Actividad
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel pb={4}>
+									Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua.
+									Ut enim ad minim veniam, quis nostrud
+									exercitation ullamco laboris nisi ut aliquip
+									ex ea commodo consequat.
+								</AccordionPanel>
+							</AccordionItem>
+						</Accordion>
+						<Heading mb={6} letterSpacing='tight'>
+							Resumen General de Actividades
+						</Heading>
+						<Accordion defaultIndex={[0]} allowMultiple>
+							<AccordionItem>
+								<h2>
+									<AccordionButton>
+										<Box flex='1' textAlign='left'>
+											Canales con Mayor Actividad
+										</Box>
+										<AccordionIcon />
+									</AccordionButton>
+								</h2>
+								<AccordionPanel pb={4}>
+									<Flex flexDir='column' my={4}>
+										<Flex justify='space-between' mb={2}>
+											
+											<Text>Solicitudes</Text>
+											<Text fontWeight='bold'>1400</Text>
 										</Flex>
-									</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>
-										<Button colorScheme='blue'>
-											Detalles
-										</Button>
-									</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
+										<Flex justify='space-between'>
+											<Icon
+												as={FiCheckSquare}
+												fontSize='2xl'
+											/>
+											<Text>Solicitudes Aprobadas</Text>
+											<Text fontWeight='bold'>3000</Text>
 										</Flex>
-									</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>
-										<Button colorScheme='blue'>
-											Detalles
-										</Button>
-									</Td>
-								</Tr>
-								<Tr>
-									<Td>
-										<Flex align='center'>
-											<Flex flexDir='column'>
-												<Heading
-													size='sm'
-													letterSpacing='tight'>
-													Info
-												</Heading>
-												{/* <Text
-													fontSize='sm'
-													color='gray'>
-													Timestamp
-												</Text> */}
-											</Flex>
+										<Flex justify='space-between'>
+											<Icon
+												as={FiXOctagon}
+												fontSize='2xl'
+											/>
+											<Text>Solicitudes Denegadas</Text>
+											<Text fontWeight='bold'>3000</Text>
 										</Flex>
-									</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>
-										<Button colorScheme='blue'>
-											Detalles
-										</Button>
-									</Td>
-								</Tr>
-							</Tbody>
-						</Table>
+										<Flex justify='space-between'>
+											<Icon
+												as={FiSquare}
+												fontSize='2xl'
+											/>
+											<Text>Solicitudes Simples</Text>
+											<Text fontWeight='bold'>3000</Text>
+										</Flex>
+										<Flex justify='space-between'>
+											<Icon as={FiGrid} fontSize='2xl' />
+											<Text>Solicitudes Multiples</Text>
+											<Text fontWeight='bold'>3000</Text>
+										</Flex>
+									</Flex>
+								</AccordionPanel>
+							</AccordionItem>
+						</Accordion>{" "}
+						*/}
 					</Flex>
 				</Flex>
 			</Flex>

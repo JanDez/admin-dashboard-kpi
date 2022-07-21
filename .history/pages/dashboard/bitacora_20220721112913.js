@@ -203,8 +203,7 @@ export default function Bitacora() {
 						<Select
 							variant='filled'
 							placeholder='Tipo de Consulta'
-							w={"500px"}
-							m={2}>
+							w={"500px"}>
 							<option value='option1'>Canal</option>
 							<option value='option2'>Canal Validador</option>
 							<option value='option3'>ID Petición</option>
@@ -217,7 +216,7 @@ export default function Bitacora() {
 							border='none'
 							borderColor='#ECF1F8'
 							borderRadius='10px'
-							m={2}>
+							mr={2}>
 							<InputLeftElement
 								pointerEvents='none'
 								children={<FiSearch color='gray' />}

@@ -443,9 +443,8 @@ export default function Dashboard() {
 					<Button
 						bgColor={value == 1 ? "gray.600" : "gray.400"}
 						size='xs'
-                        mx={1}
-                        value={"value"}
-						onClick={() => changeValue(1)
+						mx={1}
+                        onClick={() => changeValue(1)
                         }
 					/>
 					<Button

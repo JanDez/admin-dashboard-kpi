@@ -444,7 +444,7 @@ export default function Dashboard() {
 						bgColor={value == 1 ? "gray.600" : "gray.400"}
 						size='xs'
                         mx={1}
-                        value={"value"}
+                        valua
 						onClick={() => changeValue(1)
                         }
 					/>

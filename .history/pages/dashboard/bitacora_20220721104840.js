@@ -203,32 +203,16 @@ export default function Bitacora() {
 						<Select
 							variant='filled'
 							placeholder='Tipo de Consulta'
-							w={"500px"}
-							m={2}>
+							w={"500px"}>
 							<option value='option1'>Canal</option>
 							<option value='option2'>Canal Validador</option>
 							<option value='option3'>ID Petición</option>
 							<option value='option3'>Operación</option>
 						</Select>
-
-						<InputGroup
-							bgColor='#ECF1F7'
-							mb={4}
-							border='none'
-							borderColor='#ECF1F8'
-							borderRadius='10px'
-							m={2}>
-							<InputLeftElement
-								pointerEvents='none'
-								children={<FiSearch color='gray' />}
-							/>
-							<Input
-								type='text'
-								placeholder='Buscar'
-								borderRadius='10px'
-							/>
-						</InputGroup>
 					</Flex>
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Filtrar Consulta por Fecha
+					</Text>
 					<Flex
 						justifyContent='space-evenly'
 						mt={2}
@@ -258,12 +242,6 @@ export default function Bitacora() {
 							/>
 						</Box>
 					</Flex>
-					<Button colorScheme='green' w={"80px"}>
-						Buscar
-					</Button>
-					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
-						Resultado de Consulta
-					</Text>
 					<Flex>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
@@ -275,7 +253,6 @@ export default function Bitacora() {
 									<Th>Canal Validador</Th>
 									<Th>Resultado</Th>
 									<Th>Resultado Validador</Th>
-									<Th>Acción</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
@@ -286,7 +263,7 @@ export default function Bitacora() {
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
-													Info
+													Canal 1
 												</Heading>
 												{/* <Text
 													fontSize='sm'
@@ -296,15 +273,12 @@ export default function Bitacora() {
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
+									<Td>Alias</Td>
+									<Td>1212ffsf</Td>
+									<Td>Aprobado</Td>
 									<Td>
-										<Button colorScheme='blue'>
-											Detalles
+										<Button colorScheme='yellow'>
+											Editar
 										</Button>
 									</Td>
 								</Tr>
@@ -315,25 +289,22 @@ export default function Bitacora() {
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
-													Info
+													Canal 2
 												</Heading>
 												{/* <Text
 													fontSize='sm'
 													color='gray'>
-													Timestamp
+													timestamp
 												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
+									<Td>Alias</Td>
+									<Td>5431223</Td>
+									<Td>Denegado</Td>
 									<Td>
-										<Button colorScheme='blue'>
-											Detalles
+										<Button colorScheme='yellow'>
+											Editar
 										</Button>
 									</Td>
 								</Tr>
@@ -344,28 +315,26 @@ export default function Bitacora() {
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
-													Info
+													Canal 3
 												</Heading>
 												{/* <Text
 													fontSize='sm'
 													color='gray'>
-													Timestamp
+													timestamp
 												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
-									<Td>Info</Td>
+									<Td>Alias</Td>
+									<Td>54553qwqw</Td>
+									<Td>Denegado</Td>
 									<Td>
-										<Button colorScheme='blue'>
-											Detalles
+										<Button colorScheme='yellow'>
+											Editar
 										</Button>
 									</Td>
 								</Tr>
+								
 							</Tbody>
 						</Table>
 					</Flex>

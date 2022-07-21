@@ -1,26 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import {
-    Flex,
-    Heading,
-    Avatar,
-    AvatarGroup,
-    Text,
-    Icon,
-    IconButton,
-    Table,
-    Thead,
-    Tbody,
-    Tr,
-    Th,
-    Td,
-    Divider,
-    Link,
-    Box,
-    Button,
+	Flex,
+	Heading,
+	Avatar,
+	AvatarGroup,
+	Text,
+	Icon,
+	IconButton,
+	Table,
+	Thead,
+	Tbody,
+	Tr,
+	Th,
+	Td,
+	Divider,
+	Link,
+	Box,
+	Button,
     Input,
-    InputGroup,
-    InputLeftElement
-} from '@chakra-ui/react'
+    Select,
+	InputGroup,
+	InputLeftElement,
+} from "@chakra-ui/react"
 import {
 	FiHome,
 	FiCalendar,
@@ -33,12 +34,12 @@ import {
 	FiLayers,
 	FiUsers,
 } from "react-icons/fi"
-import MyChart from '../components/MyChart'
 
-export default function Dashboard() {
-    const [display, changeDisplay] = useState('hide')
-    const [value, changeValue] = useState(1)
-    return (
+import { VscCalendar } from "react-icons/vsc"
+export default function Bitacora() {
+	const [display, changeDisplay] = useState("hide")
+	const [value, changeValue] = useState(1)
+	return (
 		<Flex
 			h={[null, null, "100vh"]}
 			maxW='2000px'
@@ -98,11 +99,7 @@ export default function Dashboard() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiHome}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiHome} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -112,8 +109,9 @@ export default function Dashboard() {
 										"none",
 										"flex",
 										"flex",
-									]}>
-									<Text className='active'>Home</Text>
+									]}
+									href='/dashboard'>
+									<Text>Home</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -154,7 +152,11 @@ export default function Dashboard() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiBookOpen} fontSize='2xl' />
+									<Icon
+										as={FiBookOpen}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -166,7 +168,7 @@ export default function Dashboard() {
 										"flex",
 									]}
 									href='/dashboard/bitacora'>
-									<Text>Bitacora</Text>
+									<Text className='active'>Bitacora</Text>
 								</Link>
 							</Flex>
 						</Flex>
@@ -185,339 +187,238 @@ export default function Dashboard() {
 
 			{/* Column 2 */}
 			<Flex
-				w={["100%", "100%", "60%", "60%", "55%"]}
+				w={["100%", "85%"]}
 				p='3%'
 				flexDir='column'
 				overflow='auto'
 				minH='100vh'>
 				<Heading fontWeight='normal' mb={4} letterSpacing='tight'>
-					Bienvenido,{" "}
-					<Flex display='inline-flex' fontWeight='bold'>
-						Alan
-					</Flex>
-					<InputGroup
-						bgColor='#fff'
-						mb={4}
-						border='none'
-						borderColor='#fff'
-						borderRadius='10px'
-						mr={2}>
-						<InputLeftElement
-							pointerEvents='none'
-							children={<FiSearch color='gray' />}
-						/>
-						<Input
-							type='number'
-							placeholder='Search'
-							borderRadius='10px'
-						/>
-					</InputGroup>
+					Bitacora
 				</Heading>
-				<Text color='gray' fontSize='sm'>
-					Request
-				</Text>
-				<Text fontWeight='bold' fontSize='2xl'>
-					1450
-				</Text>
-				<MyChart />
-				<Flex justifyContent='space-between' mt={8}>
-					<Flex align='flex-end'>
-						<Heading as='h2' size='lg' letterSpacing='tight'>
-							Validaciones
-						</Heading>
-						<Text fontSize='small' color='gray' ml={4}>
-							Fecha
+				<Flex flexDir='column'>
+					<Text color='gray' fontSize='2xl' w='500px'>
+						Tipo de Consulta
+					</Text>
+					<Flex justifyContent='left' mt={2} textAlign='center'>
+						<Select
+							variant='filled'
+							placeholder='Tipo de Consulta'
+							w={"500px"}>
+							<option value='option1'>Canal</option>
+							<option value='option2'>Canal Validador</option>
+							<option value='option3'>ID Petición</option>
+							<option value='option3'>Operación</option>
+						</Select>
+					</Flex>
+					<Text color='gray' fontSize='2xl' w='500px' mt={8}>
+						Filtrar Consulta por Fecha
+					</Text>
+					<Flex
+						justifyContent='space-evenly'
+						mt={2}
+						textAlign='center'>
+						<Text color='gray' fontSize='sm' w='255px'>
+							Desde
+						</Text>
+						<Text color='gray' fontSize='sm' w='255px'>
+							Hasta
 						</Text>
 					</Flex>
-					<IconButton icon={<FiCalendar />} />
-				</Flex>
-				<Flex flexDir='column'>
-					<Flex overflow='auto'>
+					<Flex overflow='auto' justifyContent='space-evenly'>
+						<Box display='block'>
+							<Input
+								placeHolder='Selecccione Fecha de Inicio'
+								size='md'
+								backgroundColor='#ffffff'
+								type='datetime-local'
+							/>
+						</Box>
+						<Box display='block'>
+							<Input
+								placeHolder='Seleccione Fecha de Fin'
+								size='md'
+								backgroundColor='#ffffff'
+								type='datetime-local'
+							/>
+						</Box>
+					</Flex>
+					<Flex>
 						<Table variant='unstyled' mt={4}>
 							<Thead>
 								<Tr color='gray'>
+									<Th>Fecha</Th>
+									<Th>ID de Petición</Th>
+									<Th>Operación</Th>
 									<Th>Canal</Th>
-									<Th>Validador</Th>
-									<Th>Tipo de Validación</Th>
-									<Th>Status</Th>
+									<Th>Canal Validador</Th>
+									<Th>Resultado</Th>
+									<Th>Operación</Th>
 								</Tr>
 							</Thead>
 							<Tbody>
 								<Tr>
 									<Td>
 										<Flex align='center'>
-											<Avatar
-												size='sm'
-												mr={2}
-												src='amazon.jpeg'
-											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 1
 												</Heading>
-												<Text
+												{/* <Text
 													fontSize='sm'
 													color='gray'>
 													Timestamp
-												</Text>
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Validador 1</Td>
-									<Td>Multiple</Td>
+									<Td>Alias</Td>
+									<Td>1212ffsf</Td>
 									<Td>Aprobado</Td>
+									<Td>
+										<Button colorScheme='yellow'>
+											Editar
+										</Button>
+									</Td>
 								</Tr>
 								<Tr>
 									<Td>
 										<Flex align='center'>
-											<Avatar
-												size='sm'
-												mr={2}
-												src='amazon.jpeg'
-											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 2
 												</Heading>
-												<Text
+												{/* <Text
 													fontSize='sm'
 													color='gray'>
 													timestamp
-												</Text>
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Velidador 2</Td>
-									<Td>Simple</Td>
+									<Td>Alias</Td>
+									<Td>5431223</Td>
 									<Td>Denegado</Td>
+									<Td>
+										<Button colorScheme='yellow'>
+											Editar
+										</Button>
+									</Td>
 								</Tr>
 								<Tr>
 									<Td>
 										<Flex align='center'>
-											<Avatar
-												size='sm'
-												mr={2}
-												src='amazon.jpeg'
-											/>
 											<Flex flexDir='column'>
 												<Heading
 													size='sm'
 													letterSpacing='tight'>
 													Canal 3
 												</Heading>
-												<Text
+												{/* <Text
 													fontSize='sm'
 													color='gray'>
 													timestamp
-												</Text>
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
-									<Td>Validador 3</Td>
-									<Td>Simple</Td>
+									<Td>Alias</Td>
+									<Td>54553qwqw</Td>
 									<Td>Denegado</Td>
+									<Td>
+										<Button colorScheme='yellow'>
+											Editar
+										</Button>
+									</Td>
 								</Tr>
 								{display == "show" && (
 									<>
 										<Tr>
 											<Td>
 												<Flex align='center'>
-													<Avatar
-														size='sm'
-														mr={2}
-														src='amazon.jpeg'
-													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 4
 														</Heading>
-														<Text
+														{/* <Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text>
+														</Text> */}
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Validador 4</Td>
-											<Td>Multiple</Td>
+											<Td>Alias</Td>
+											<Td>7675434jj</Td>
 											<Td>Aprobado</Td>
+											<Td>
+												<Button colorScheme='yellow'>
+													Editar
+												</Button>
+											</Td>
 										</Tr>
 										<Tr>
 											<Td>
 												<Flex align='center'>
-													<Avatar
-														size='sm'
-														mr={2}
-														src='amazon.jpeg'
-													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 5
 														</Heading>
-														<Text
+														{/* <Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text>
+														</Text> */}
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Validador 5</Td>
-											<Td>Multiple</Td>
+											<Td>Alias</Td>
+											<Td>2121k4k4k4</Td>
 											<Td>Aprobado</Td>
+											<Td>
+												<Button colorScheme='yellow'>
+													Editar
+												</Button>
+											</Td>
 										</Tr>
 										<Tr>
 											<Td>
 												<Flex align='center'>
-													<Avatar
-														size='sm'
-														mr={2}
-														src='amazon.jpeg'
-													/>
 													<Flex flexDir='column'>
 														<Heading
 															size='sm'
 															letterSpacing='tight'>
 															Canal 6
 														</Heading>
-														<Text
+														{/* <Text
 															fontSize='sm'
 															color='gray'>
 															timestamp
-														</Text>
+														</Text> */}
 													</Flex>
 												</Flex>
 											</Td>
-											<Td>Validador 6</Td>
-											<Td>Simple</Td>
+											<Td>Alias</Td>
+											<Td>1123123fdf</Td>
 											<Td>Aprobado</Td>
+											<Td>
+												<Button colorScheme='yellow'>
+													Editar
+												</Button>
+											</Td>
 										</Tr>
 									</>
 								)}
 							</Tbody>
 						</Table>
 					</Flex>
-					<Flex align='center'>
-						<Divider />
-						<IconButton
-							icon={
-								display == "show" ? (
-									<FiChevronUp />
-								) : (
-									<FiChevronDown />
-								)
-							}
-							onClick={() => {
-								if (display == "show") {
-									changeDisplay("none")
-								} else {
-									changeDisplay("show")
-								}
-							}}
-						/>
-						<Divider />
-					</Flex>
-				</Flex>
-			</Flex>
-
-			{/* Column 3 */}
-			<Flex
-				w={["100%", "100%", "30%"]}
-				bgColor='#F5F5F5'
-				p='3%'
-				flexDir='column'
-				overflow='auto'
-				minW={[null, null, "300px", "300px", "400px"]}>
-				
-				<Heading letterSpacing='tight'>Actividad</Heading>
-				<Flex justifyContent='center' mt={2}>
-					<Button
-						bgColor={value == 1 ? "gray.600" : "gray.400"}
-						size='xs'
-                        mx={1}
-                        value={"value"}
-						onClick={() => changeValue(1)
-                        }
-					/>
-					<Button
-						bgColor={value == 2 ? "gray.600" : "gray.400"}
-						size='xs'
-						mx={1}
-						onClick={() => changeValue(2)}
-					/>
-					<Button
-						bgColor={value == 3 ? "gray.600" : "gray.400"}
-						size='xs'
-						mx={1}
-						onClick={() => changeValue(3)}
-					/>
-				</Flex>
-				<Flex flexDir='column' my={4}>
-					<Flex justify='space-between' mb={2}>
-						<Text>Solicitudes</Text>
-						<Text fontWeight='bold'>1400</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Aprobadas</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Denegadas</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Simples</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-					<Flex justify='space-between'>
-						<Text>Solicitudes Multiples</Text>
-						<Text fontWeight='bold'>3000</Text>
-					</Flex>
-				</Flex>
-				<Heading letterSpacing='tight' size='md' my={4}>
-					Canales Mas Activos
-				</Heading>
-				<Flex>
-					<AvatarGroup size='md' max={3}>
-						<Avatar src='avatar-2.jpg' />
-						<Avatar src='avatar-3.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-					</AvatarGroup>
-					<Avatar
-						icon={<FiPlus />}
-						ml={2}
-						color='#fff'
-						bgColor='gray.300'
-					/>
-				</Flex>
-				<Heading letterSpacing='tight' size='md' my={4}>
-					Validadores Mas Activos
-				</Heading>
-				<Flex>
-					<AvatarGroup size='md' max={3}>
-						<Avatar src='avatar-3.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-2.jpg' />
-						<Avatar src='avatar-4.jpg' />
-						<Avatar src='avatar-4.jpg' />
-					</AvatarGroup>
-					<Avatar
-						icon={<FiPlus />}
-						ml={2}
-						color='#fff'
-						bgColor='gray.300'
-					/>
 				</Flex>
 			</Flex>
 		</Flex>

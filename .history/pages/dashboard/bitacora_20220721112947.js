@@ -203,8 +203,8 @@ export default function Bitacora() {
 						<Select
 							variant='filled'
 							placeholder='Tipo de Consulta'
-							w={"500px"}
-							m={2}>
+                            w={"500px"}
+                        >
 							<option value='option1'>Canal</option>
 							<option value='option2'>Canal Validador</option>
 							<option value='option3'>ID Petición</option>
