@@ -21,7 +21,6 @@ import {
 	Input,
 	InputGroup,
 	InputLeftElement,
-	
 } from "@chakra-ui/react"
 import {
 	FiHome,
@@ -37,8 +36,13 @@ import {
 	FiSquare,
 	FiGrid,
 } from "react-icons/fi"
-
-import KeysModal from '../../components/KeysModal'
+import {
+	Accordion,
+	AccordionItem,
+	AccordionButton,
+	AccordionPanel,
+	AccordionIcon,
+} from "@chakra-ui/react"
 
 const OverlayTwo = () => (
 	<ModalOverlay
@@ -49,10 +53,15 @@ const OverlayTwo = () => (
 	/>
 )
 
+const { isOpen, onOpen, onClose } = useDisclosure()
+const [overlay, setOverlay] = React.useState(<OverlayOne />)
+
 export default function Canales() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
+
+		
 		<Flex
 			h={[null, null, "100vh"]}
 			maxW='2000px'
@@ -122,8 +131,7 @@ export default function Canales() {
 										"none",
 										"flex",
 										"flex",
-									]}
-									href='/dashboard'>
+									]}>
 									<Text>Home</Text>
 								</Link>
 							</Flex>
@@ -261,7 +269,14 @@ export default function Canales() {
 										</Button>
 									</Td>
 									<Td>
-										<KeysModal />
+										<Button
+											ml='4'
+											onClick={() => {
+												setOverlay(<OverlayTwo />)
+												onOpen()
+											}}>
+											Ver Llave
+										</Button>
 									</Td>
 								</Tr>
 								<Tr>

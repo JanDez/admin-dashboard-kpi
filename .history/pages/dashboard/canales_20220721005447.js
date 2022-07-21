@@ -123,7 +123,7 @@ export default function Canales() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard'>
+									href='/dashboard/canales'>
 									<Text>Home</Text>
 								</Link>
 							</Flex>

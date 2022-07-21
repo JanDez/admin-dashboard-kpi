@@ -53,6 +53,8 @@ export default function Canales() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
+       
+
 		<Flex
 			h={[null, null, "100vh"]}
 			maxW='2000px'
@@ -122,8 +124,8 @@ export default function Canales() {
 										"none",
 										"flex",
 										"flex",
-									]}
-									href='/dashboard'>
+									]}>
+									
 									<Text>Home</Text>
 								</Link>
 							</Flex>
