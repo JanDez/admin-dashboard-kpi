@@ -100,7 +100,11 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon as={FiHome} fontSize='2xl' />
+									<Icon
+										as={FiHome}
+										fontSize='2xl'
+										className='active-icon'
+									/>
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
@@ -112,7 +116,7 @@ export default function Bitacora() {
 										"flex",
 									]}
 									href='/dashboard'>
-									<Text>Home</Text>
+									<Text className='active'>Home</Text>
 								</Link>
 							</Flex>
 							<Flex
@@ -153,11 +157,7 @@ export default function Bitacora() {
 										"flex",
 										"flex",
 									]}>
-									<Icon
-										as={FiBookOpen}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									<Icon as={FiBookOpen} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
