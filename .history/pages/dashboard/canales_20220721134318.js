@@ -116,7 +116,7 @@ export default function Canales() {
 										"flex",
 										"flex",
 									]}
-									href='/dashboard/home'>
+									href='/dashboard'>
 									<Text>Home</Text>
 								</Link>
 							</Flex>
@@ -132,11 +132,8 @@ export default function Canales() {
 										"flex",
 									]}
 									href='/dashboard/canales'>
-									<Icon
-										as={FiLayers}
-										fontSize='2xl'
-										className='active-icon'
-									/>
+									className='active-icon'
+									<Icon as={FiLayers} fontSize='2xl' />
 								</Link>
 								<Link
 									_hover={{ textDecor: "none" }}
