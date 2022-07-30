@@ -283,6 +283,11 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
@@ -308,6 +313,11 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
@@ -322,6 +332,11 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
@@ -336,6 +351,11 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
@@ -368,6 +388,11 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
@@ -384,6 +409,11 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>
@@ -400,6 +430,11 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												{/* <Text
+													fontSize='sm'
+													color='gray'>
+													Timestamp
+												</Text> */}
 											</Flex>
 										</Flex>
 									</Td>

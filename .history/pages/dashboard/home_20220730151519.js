@@ -384,6 +384,7 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												
 											</Flex>
 										</Flex>
 									</Td>
@@ -400,6 +401,7 @@ export default function Home() {
 													letterSpacing='tight'>
 													Info
 												</Heading>
+												
 											</Flex>
 										</Flex>
 									</Td>
