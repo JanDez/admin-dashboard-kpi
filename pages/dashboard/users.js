@@ -265,7 +265,7 @@ export default function Bitacora() {
 					<Flex overflow='auto' justifyContent='space-evenly'>
 						<Box display='block'>
 							<Input
-								placeHolder='Selecccione Fecha de Inicio'
+								placeholder='Selecccione Fecha de Inicio'
 								size='md'
 								backgroundColor='#ffffff'
 								type='datetime-local'
@@ -273,7 +273,7 @@ export default function Bitacora() {
 						</Box>
 						<Box display='block'>
 							<Input
-								placeHolder='Seleccione Fecha de Fin'
+								placeholder='Seleccione Fecha de Fin'
 								size='md'
 								backgroundColor='#ffffff'
 								type='datetime-local'
