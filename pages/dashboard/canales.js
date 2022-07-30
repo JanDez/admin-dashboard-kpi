@@ -39,7 +39,7 @@ import {
 	FiGrid,
 } from "react-icons/fi"
 
-import KeysModal from '../../components/KeysModal'
+import KeysModal from '../../components/modalsFolder/KeysModal'
 import MyOperations from '../../components/MyOperations'
 
 export default function Canales() {
