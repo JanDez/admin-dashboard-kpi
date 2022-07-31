@@ -23,7 +23,7 @@ const data = {
 		{
 			label: "Actividad",
 			fill: false,
-			lineTension: 1,
+			lineTension: 0,
 			backgroundColor: "#db86b2",
 			borderColor: "#B57295",
 			borderCapStyle: "butt",
@@ -39,8 +39,8 @@ const data = {
 			pointRadius: 1,
 			pointHitRadius: 10,
 			data: [
-				110, 120, 110, 70, 150, 140, 70, 80, 90, 130, 128, 120, 130, 145,
-				150,
+				100, 120, 100, 110, 90, 65, 72, 85, 90, 70, 80, 70, 70, 75,
+				70,
 			],
 		},
 	],
