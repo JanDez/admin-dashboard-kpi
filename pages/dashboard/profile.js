@@ -11,17 +11,15 @@ import {
 	Td,
 	Box,
 	Button,
-    Input,
-    Select,
+	Input,
+	Select,
 	InputGroup,
 	InputLeftElement,
 } from "@chakra-ui/react"
-import {
-	FiSearch,
-} from "react-icons/fi"
+import { FiSearch } from "react-icons/fi"
 
-import SideBar  from "../../components/layout/sideBar"
-export default function Bitacora() {
+import SideBar from "../../components/layout/sideBar"
+export default function Profile() {
 	const [display, changeDisplay] = useState("hide")
 	const [value, changeValue] = useState(1)
 	return (
