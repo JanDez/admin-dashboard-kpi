@@ -5,7 +5,6 @@ import {
 	Avatar,
 	AvatarGroup,
 	Text,
-	Icon,
 	IconButton,
 	Table,
 	Thead,
@@ -14,24 +13,13 @@ import {
 	Th,
 	Td,
 	Divider,
-	Link,
-	Box,
 	Button,
-	Input,
-	InputGroup,
-	InputLeftElement,
 } from "@chakra-ui/react"
 import {
-	FiHome,
 	FiCalendar,
 	FiChevronDown,
 	FiChevronUp,
 	FiPlus,
-	FiSearch,
-	FiBookOpen,
-	FiKey,
-	FiLayers,
-	FiUsers,
 } from "react-icons/fi"
 
 import SideBar from "../../components/layout/sideBar"
